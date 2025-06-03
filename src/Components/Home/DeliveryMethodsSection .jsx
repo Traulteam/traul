@@ -206,45 +206,6 @@ const DeliveryMethodsSection = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Bottom decorative elements */}
-        <motion.div
-          className="mt-16 flex justify-end"
-          variants={bottomVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          <motion.div
-            className="flex items-center gap-4"
-            whileHover={{ x: 10 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <motion.div
-              className="w-12 h-12 bg-black rounded-full flex items-center justify-center border border-gray-700"
-              whileHover={{
-                scale: 1.1,
-                backgroundColor: "#f97316",
-                transition: { duration: 0.3 },
-              }}
-            >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </motion.div>
-            <span className="text-white font-medium">Know More</span>
-          </motion.div>
-        </motion.div>
       </div>
     </div>
   );

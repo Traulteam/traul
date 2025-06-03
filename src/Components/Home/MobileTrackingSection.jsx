@@ -4,7 +4,10 @@ import phone from "/phone.jpeg";
 
 const MobileTrackingSection = () => {
   return (
-    <div className="bg-gray-50 py-16 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <div
+      className="bg-gray-50 py-16 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20"
+      id="mobile-tracking-section"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left side - Image placeholder */}
