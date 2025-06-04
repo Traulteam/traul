@@ -5,9 +5,9 @@ import hero from "/hero1.png";
 function HeroSection() {
   return (
     <div className="">
-      <img src={hero} alt="" className="" />
+      <img src={hero} alt="" className="w-full" />
 
-      <div className="absolute inset-0 lg:-top-[20%] flex items-center justify-center">
+      <div className="absolute inset-0 -top-[60%] md:-top-[70%] lg:-top-[20%] flex items-center justify-center">
         <div className="text-center text-black px-4 sm:px-6 lg:px-8 max-w-4xl">
           <motion.h1
             className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-medium mb-4 sm:mb-6 leading-tight sm:whitespace-nowrap"
