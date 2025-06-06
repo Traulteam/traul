@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "/logo-png.png";
+import { Link } from "react-router";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,11 +41,13 @@ function Header() {
       <div className="flex items-center justify-between py-4">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <img
-            src={logo}
-            alt="Traul Logo"
-            className="w-8 sm:w-8 lg:w-20 rounded-md"
-          />
+          <Link to={"/"}>
+            <img
+              src={logo}
+              alt="Traul Logo"
+              className="w-8 sm:w-8 lg:w-20 rounded-md"
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
