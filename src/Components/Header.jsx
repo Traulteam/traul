@@ -52,12 +52,16 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-10">
-          <p className="font-medium cursor-pointer hover:font-bold transition-all text-sm lg:text-base">
-            For Enterprise
-          </p>
-          <p className="font-medium cursor-pointer hover:font-bold transition-all text-sm lg:text-base">
-            For Delivery
-          </p>
+          <Link to={"/contact-us"}>
+            <p className="font-medium cursor-pointer hover:font-bold transition-all text-sm lg:text-base">
+              For Enterprise
+            </p>
+          </Link>
+          <Link to={"/contact-us"}>
+            <p className="font-medium cursor-pointer hover:font-bold transition-all text-sm lg:text-base">
+              For Delivery
+            </p>
+          </Link>
         </nav>
 
         {/* Desktop Support Button */}
