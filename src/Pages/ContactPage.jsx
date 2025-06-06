@@ -115,7 +115,7 @@ const ContactPage = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-600/10"></div>
+        <div className="absolute inset-0 bg-white"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -123,7 +123,7 @@ const ContactPage = () => {
                 Get In Touch
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
               Ready to streamline your logistics? Contact our expert team today
               and discover how we can deliver your packages faster, safer, and
               more efficiently than anyone else.
