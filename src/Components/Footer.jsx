@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 // import { Link } from "react-router";
 const Footer = () => {
   const socialLinks = [
@@ -77,7 +78,7 @@ const Footer = () => {
   ];
 
   const legalLinks = [
-    { label: "Privacy Policy", href: "#" },
+    { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "#" },
   ];
 
@@ -209,13 +210,13 @@ const Footer = () => {
             </p>
             <nav className="flex items-center gap-6">
               {legalLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-gray-400 hover:text-orange-400 transition-colors text-sm"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>

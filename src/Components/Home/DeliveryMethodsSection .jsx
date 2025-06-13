@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import truck from "/truck1.png";
+import Transport from "/transport2.png";
+
 const DeliveryMethodsSection = () => {
   const transportServices = [
     {
@@ -14,7 +17,7 @@ const DeliveryMethodsSection = () => {
         "Pharma Supplies",
         "Small Electronics",
       ],
-      icon: "🏍️",
+      icon: Transport,
     },
     {
       title: "Mini Truck Services",
@@ -27,7 +30,7 @@ const DeliveryMethodsSection = () => {
         "Pickup 8ft & 9ft (1-1.7 tons)",
         "Eicher 14ft (2-3 tons)",
       ],
-      icon: "🚛",
+      icon: truck,
     },
   ];
 
@@ -158,13 +161,14 @@ const DeliveryMethodsSection = () => {
                   variants={iconVariants}
                 >
                   <motion.div
-                    className="w-full max-w-sm h-32 overflow-hidden bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg"
+                    className="w-full max-w-lg h-32 overflow-hidden bg-gradient-to-r flex items-center justify-center shadow-lg"
                     whileHover={{
                       scale: 1.05,
                       transition: { duration: 0.3 },
                     }}
                   >
-                    <span className="text-6xl">{service.icon}</span>
+                    {/* <span className="text-6xl">{service.icon}</span> */}
+                    <img src={service.icon} alt="" className="w-40" />
                   </motion.div>
                 </motion.div>
 
