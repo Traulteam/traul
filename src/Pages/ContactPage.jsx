@@ -52,16 +52,6 @@ const ContactPage = () => {
       content: "+1 (555) 123-4567\nMon-Fri 9AM-6PM EST",
       action: "Call Now",
     },
-    {
-      icon: (
-        <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
-          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-        </svg>
-      ),
-      title: "Email Us",
-      content: "info@traul.com\nSupport available 24/7",
-      action: "Send Email",
-    },
   ];
 
   const socialLinks = [
@@ -132,34 +122,11 @@ const ContactPage = () => {
         </div>
       </div>
 
-      {/* Contact Cards */}
+      {/* Contact Form & Info Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {contactInfo.map((info, index) => (
-            <div
-              key={index}
-              className="group bg-gray-800/50 hover:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 transition-all duration-300 transform hover:scale-105 border border-gray-700/50 hover:border-orange-500/50"
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-lg group-hover:shadow-orange-500/25 transition-all duration-300">
-                <div className="text-white">{info.icon}</div>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-orange-400 transition-colors">
-                {info.title}
-              </h3>
-              <p className="text-gray-300 mb-6 whitespace-pre-line leading-relaxed">
-                {info.content}
-              </p>
-              <button className="text-orange-400 hover:text-orange-300 font-medium transition-colors group-hover:underline">
-                {info.action} →
-              </button>
-            </div>
-          ))}
-        </div>
-
-        {/* Contact Form & Info Section */}
         <div className="flex flex-col lg:flex-row justify-between gap-16">
           {/* Contact Form */}
-          <div className="lg:flex-1">
+          <div className="w-full">
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
               <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Send Us a Message
@@ -169,7 +136,7 @@ const ContactPage = () => {
                 hours.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -272,91 +239,67 @@ const ContactPage = () => {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25"
+                <div
+                  onClick={handleSubmit}
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25 cursor-pointer text-center"
                 >
                   Send Message
-                </button>
-              </form>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Additional Info */}
-          <div className="lg:flex-shrink-0 lg:w-80 space-y-8">
-            {/* Business Hours */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
-              <h3 className="text-xl font-semibold mb-6 text-white">
-                Business Hours
+        {/* Contact Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+          {contactInfo.map((info, index) => (
+            <div
+              key={index}
+              className="group bg-gray-800/50 hover:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 transition-all duration-300 transform hover:scale-105 border border-gray-700/50 hover:border-orange-500/50"
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-lg group-hover:shadow-orange-500/25 transition-all duration-300">
+                <div className="text-white">{info.icon}</div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-orange-400 transition-colors">
+                {info.title}
               </h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Monday - Friday</span>
-                  <span className="text-orange-400 font-medium">
-                    9:00 AM - 6:00 PM
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Saturday</span>
-                  <span className="text-orange-400 font-medium">
-                    10:00 AM - 4:00 PM
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Sunday</span>
-                  <span className="text-gray-500">Closed</span>
-                </div>
-              </div>
-              <div className="mt-6 pt-6 border-t border-gray-700">
-                <p className="text-sm text-gray-400">
-                  Emergency support available 24/7 for existing customers
-                </p>
-              </div>
-            </div>
-
-            {/* Social Media */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
-              <h3 className="text-xl font-semibold mb-6 text-white">
-                Follow Us
-              </h3>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="group w-12 h-12 bg-gray-700 hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110"
-                    aria-label={`Follow us on ${social.name}`}
-                  >
-                    <span className="text-gray-300 group-hover:text-white transition-colors">
-                      {social.icon}
-                    </span>
-                  </a>
-                ))}
-              </div>
-              <p className="text-sm text-gray-400 mt-4">
-                Stay updated with our latest news and logistics insights
+              <p className="text-gray-300 mb-6 whitespace-pre-line leading-relaxed">
+                {info.content}
               </p>
+              <button className="text-orange-400 hover:text-orange-300 font-medium transition-colors group-hover:underline">
+                {info.action} →
+              </button>
             </div>
+          ))}
+        </div>
 
-            {/* Response Time */}
-            <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/20">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-4 h-4 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-white">
-                  Quick Response
-                </h3>
+        {/* Business Hours */}
+        <div className="flex justify-center mt-16">
+          <div className="w-full max-w-md bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
+            <h3 className="text-xl font-semibold mb-6 text-white text-center">
+              Business Hours
+            </h3>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Monday - Friday</span>
+                <span className="text-orange-400 font-medium">
+                  9:00 AM - 6:00 PM
+                </span>
               </div>
-              <p className="text-gray-300 leading-relaxed">
-                We typically respond to all inquiries within 2-4 hours during
-                business hours. Urgent shipping requests are prioritized.
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Saturday</span>
+                <span className="text-orange-400 font-medium">
+                  10:00 AM - 4:00 PM
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-300">Sunday</span>
+                <span className="text-gray-500">Closed</span>
+              </div>
+            </div>
+            <div className="mt-6 pt-6 border-t border-gray-700">
+              <p className="text-sm text-gray-400 text-center">
+                Emergency support available 24/7 for existing customers
               </p>
             </div>
           </div>

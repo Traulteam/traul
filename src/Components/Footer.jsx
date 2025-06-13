@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+// import { Link } from "react-router";
 const Footer = () => {
   const socialLinks = [
     {
@@ -69,17 +69,16 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: "About Us", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Tracking", href: "#" },
-    { label: "Support", href: "#" },
-    { label: "Careers", href: "#" },
+    { label: "2-Wheeler Delivery", href: "#" },
+    { label: "Mini Truck Transport", href: "#" },
+    { label: "Local Delivery", href: "#" },
+    { label: "Outstation Transport", href: "#" },
+    { label: "Scheduled Bookings", href: "#" },
   ];
 
   const legalLinks = [
     { label: "Privacy Policy", href: "#" },
     { label: "Terms of Service", href: "#" },
-    { label: "Cookie Policy", href: "#" },
   ];
 
   return (
@@ -87,7 +86,7 @@ const Footer = () => {
       className="bg-gradient-to-b from-gray-900 to-black text-white"
       role="contentinfo"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-full mx-auto px-4 sm:px-6 lg:px-24">
         {/* Main footer content */}
         <div className="py-16">
           <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-12">
@@ -98,8 +97,9 @@ const Footer = () => {
                   Traul
                 </h2>
                 <p className="text-gray-300 mt-4 leading-relaxed max-w-md">
-                  More than just a logistics shipment. We deliver your packages
-                  quickly and safely—faster than any other shipping agency.
+                  Redefining last-mile logistics for Bharat. Your trusted
+                  partner for fast, affordable, and trackable goods transport
+                  across Andhra Pradesh.
                 </p>
               </div>
 
@@ -125,70 +125,77 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Contact Info */}
+            {/* Services */}
             <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-white">Contact Info</h3>
+              <h3 className="text-lg font-semibold text-white">Services</h3>
               <div className="space-y-4">
-                <div className="flex items-start gap-3 group">
-                  <div className="w-5 h-5 text-orange-500 mt-1 group-hover:text-orange-400 transition-colors">
-                    <svg
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                  </div>
-                  <address className="text-gray-400 text-sm not-italic leading-relaxed">
-                    123 Logistics Street
-                    <br />
-                    Business District, City 12345
-                  </address>
-                </div>
-
                 <a
-                  href="tel:+15551234567"
-                  className="flex items-center gap-3 group hover:text-orange-400 transition-colors"
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  <div className="w-5 h-5 text-orange-500 group-hover:text-orange-400 transition-colors">
-                    <svg
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-400 group-hover:text-orange-400 transition-colors">
-                    +1 (555) 123-4567
-                  </span>
+                  2-Wheeler Delivery
                 </a>
-
                 <a
-                  href="mailto:info@traul.com"
-                  className="flex items-center gap-3 group hover:text-orange-400 transition-colors"
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  <div className="w-5 h-5 text-orange-500 group-hover:text-orange-400 transition-colors">
-                    <svg
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-400 group-hover:text-orange-400 transition-colors">
-                    info@traul.com
-                  </span>
+                  Mini Truck Transport
+                </a>
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  Local Delivery
+                </a>
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  Outstation Transport
+                </a>
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  Scheduled Bookings
                 </a>
               </div>
+            </div>
 
-              <Link
-                to="/contact-us"
-                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-medium rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25"
-              >
-                Get In Touch
-              </Link>
+            <div className="space-y-6">
+              <h3 className="text-lg font-semibold text-white">Company</h3>
+              <div className="space-y-4">
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  About Us
+                </a>
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  How It Works
+                </a>
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  Pricing
+                </a>
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  Contact Support
+                </a>
+                <a
+                  href="#"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  Terms & Conditions
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -197,7 +204,8 @@ const Footer = () => {
         <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2025 Traul Logistics. All rights reserved.
+              © 2024 Traul. All rights reserved. Redefining Last-Mile Logistics
+              for Bharat.
             </p>
             <nav className="flex items-center gap-6">
               {legalLinks.map((link) => (

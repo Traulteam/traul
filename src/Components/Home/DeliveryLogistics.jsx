@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import { Package, Percent, Headphones } from "lucide-react";
+"use client";
+
+import { useEffect, useRef } from "react";
+import { Package, Shield, Headphones, Clock } from "lucide-react";
 
 function DeliveryLogistics() {
   const headerRef = useRef(null);
@@ -8,33 +10,43 @@ function DeliveryLogistics() {
   const cards = [
     {
       id: 1,
-      title: "Always Protected Your Packages",
+      title: "Real-Time Tracking",
       description:
-        "We will guarantee the safety of your packages from the time the goods are delivered to their destination",
+        "Track your delivery from pickup to drop-off with live GPS updates",
       icon: Package,
       iconColor: "text-blue-600",
       backgroundColor: "bg-blue-50",
-      category: "security",
-    },
-    {
-      id: 2,
-      title: "You Can Live Tracking Your Packages",
-      description:
-        "You can monitor and track your goods easily, precisely and in real time anywhere and anytime",
-      icon: Percent,
-      iconColor: "text-red-500",
-      backgroundColor: "bg-red-50",
       category: "tracking",
     },
     {
-      id: 3,
-      title: "Our Customer Service Will Be There For You 24/7",
+      id: 2,
+      title: "Verified Drivers",
       description:
-        "We provide customer service that will serve you if you have a problem with your packages",
+        "All drivers undergo background verification and vehicle inspection",
+      icon: Shield,
+      iconColor: "text-red-500",
+      backgroundColor: "bg-red-50",
+      category: "security",
+    },
+    {
+      id: 3,
+      title: "24/7 Support",
+      description:
+        "Local support in Telugu and English wherever you need assistance",
       icon: Headphones,
       iconColor: "text-green-600",
       backgroundColor: "bg-green-50",
       category: "support",
+    },
+    {
+      id: 4,
+      title: "Same-day Delivery",
+      description:
+        "Fast delivery with most local trips complete within 1-2 hours",
+      icon: Clock,
+      iconColor: "text-purple-600",
+      backgroundColor: "bg-purple-50",
+      category: "speed",
     },
   ];
 
@@ -150,16 +162,16 @@ function DeliveryLogistics() {
       >
         <h1 className="title-animate fade-left-animate text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl leading-tight font-bold">
           <span className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
-            Deliver Your <span className="text-orange-500">Logistic</span>
+            How <span className="text-orange-500">Traul</span>
           </span>
-          Safely and Quickly
+          Works
         </h1>
 
         <div className="desc-animate fade-right-animate lg:ml-10 flex flex-col items-start">
           <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
-            This is the reason why you should use our <br />
-            services instead of using other shipping <br />
-            agency
+            Simple, Fast and Transparent - get <br />
+            your goods delivered in 5 easy steps <br />
+            Quickly
           </p>
         </div>
       </div>
@@ -167,7 +179,7 @@ function DeliveryLogistics() {
       {/* Cards Section */}
       <div
         ref={cardsRef}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
       >
         {cards.map((card, index) => {
           const IconComponent = card.icon;
