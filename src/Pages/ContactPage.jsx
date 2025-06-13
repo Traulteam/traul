@@ -122,11 +122,11 @@ const ContactPage = () => {
         </div>
       </div>
 
-      {/* Contact Form & Info Section */}
+      {/* Contact Form & Business Hours Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col lg:flex-row justify-between gap-16">
           {/* Contact Form */}
-          <div className="w-full">
+          <div className="w-full lg:w-2/3">
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
               <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Send Us a Message
@@ -248,6 +248,38 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
+
+          {/* Business Hours */}
+          <div className="w-full lg:w-1/3">
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 h-fit">
+              <h3 className="text-xl font-semibold mb-6 text-white text-center">
+                Business Hours
+              </h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Monday - Friday</span>
+                  <span className="text-orange-400 font-medium">
+                    9:00 AM - 6:00 PM
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Saturday</span>
+                  <span className="text-orange-400 font-medium">
+                    10:00 AM - 4:00 PM
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-300">Sunday</span>
+                  <span className="text-gray-500">Closed</span>
+                </div>
+              </div>
+              <div className="mt-6 pt-6 border-t border-gray-700">
+                <p className="text-sm text-gray-400 text-center">
+                  Emergency support available 24/7 for existing customers
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Cards */}
@@ -271,38 +303,6 @@ const ContactPage = () => {
               </button>
             </div>
           ))}
-        </div>
-
-        {/* Business Hours */}
-        <div className="flex justify-center mt-16">
-          <div className="w-full max-w-md bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
-            <h3 className="text-xl font-semibold mb-6 text-white text-center">
-              Business Hours
-            </h3>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center">
-                <span className="text-gray-300">Monday - Friday</span>
-                <span className="text-orange-400 font-medium">
-                  9:00 AM - 6:00 PM
-                </span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-300">Saturday</span>
-                <span className="text-orange-400 font-medium">
-                  10:00 AM - 4:00 PM
-                </span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-gray-300">Sunday</span>
-                <span className="text-gray-500">Closed</span>
-              </div>
-            </div>
-            <div className="mt-6 pt-6 border-t border-gray-700">
-              <p className="text-sm text-gray-400 text-center">
-                Emergency support available 24/7 for existing customers
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>

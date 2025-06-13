@@ -83,13 +83,13 @@ function Header() {
         <nav className="hidden md:flex items-center justify-center flex-1 gap-8">
           <Link
             to="/contact-us"
-            className="hover:font-semibold text-sm lg:text-base"
+            className="hover:font-semibold text-sm lg:text-base text-black"
           >
             For Enterprise
           </Link>
           <Link
             to="/contact-us"
-            className="hover:font-semibold text-sm lg:text-base"
+            className="hover:font-semibold text-sm lg:text-base text-black"
           >
             For Delivery
           </Link>
