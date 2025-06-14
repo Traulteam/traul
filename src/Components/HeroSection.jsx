@@ -42,10 +42,8 @@ function HeroSection() {
         >
           Book 2-wheeler & mini truck in seconds. Fast, affordable, and
           trackable delivery services across{" "}
-          <span className="text-black font-semibold">
-            Vijaywada, Guntur, Bhimavaram
-          </span>
-          , and beyond.
+          <span className="text-black font-semibold">Vijaywada</span>, and
+          beyond.
         </motion.p>
       </div>
     </div>
