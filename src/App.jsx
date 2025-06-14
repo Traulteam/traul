@@ -5,6 +5,8 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import ContactPage from "./Pages/ContactPage";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import TermsCondition from "./Pages/TermsCondition";
+import Refund from "./Pages/Refund";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact-us" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsCondition />} />
+          <Route path="/refund" element={<Refund />} />
         </Routes>
         <Footer />
       </BrowserRouter>

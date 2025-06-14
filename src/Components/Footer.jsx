@@ -79,7 +79,7 @@ const Footer = () => {
 
   const legalLinks = [
     { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Terms of Service", href: "/terms" },
   ];
 
   return (
@@ -190,12 +190,12 @@ const Footer = () => {
                 >
                   Contact Support
                 </a>
-                <a
-                  href="#"
+                <Link
+                  to="/refund"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
                   Terms & Conditions
-                </a>
+                </Link>
               </div>
             </div>
           </div>

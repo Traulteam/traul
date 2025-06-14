@@ -1,12 +1,12 @@
 import React from "react";
 
-const PrivacyPolicy = () => {
+function TermsCondition() {
   const handleDownloadPDF = () => {
     // Create a sample PDF download link
     // In a real application, this would link to your actual privacy policy PDF
     const link = document.createElement("a");
-    link.href = "/privacypolicy.docx"; // Replace with actual PDF URL
-    link.download = "privacypolicy.docx";
+    link.href = "/termandcondition.docx"; // Replace with actual PDF URL
+    link.download = "termandcondition.docx";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -19,16 +19,18 @@ const PrivacyPolicy = () => {
           {/* Title Section */}
           <div className="space-y-6">
             <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-              Privacy Policy
+              Terms and Conditions
             </h1>
             <div className="h-1 w-32 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
           </div>
 
           {/* Subtitle */}
-          <p className="text-gray-300 text-xl lg:text-2xl leading-relaxed max-w-3xl">
-            Your privacy is important to us. Download our comprehensive privacy
-            policy to understand how we collect, use, and protect your personal
-            information.
+          <p className="text-gray-300 text-xl lg:text-2xl leading-relaxed text-justify max-w-3xl">
+            Please Read Our Terms and Conditions Your use of our services is
+            subject to the terms outlined in our comprehensive Terms and
+            Conditions. Download and review the full document to understand your
+            rights, responsibilities, and the rules governing your use of our
+            website and services.
           </p>
 
           {/* Download Button */}
@@ -86,6 +88,6 @@ const PrivacyPolicy = () => {
       </div>
     </section>
   );
-};
+}
 
-export default PrivacyPolicy;
+export default TermsCondition;

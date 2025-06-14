@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import truck from "/truck1.png";
-import Transport from "/transport2.png";
+import truck from "/truck3.png";
+import Transport from "/transport3.png";
 
 const DeliveryMethodsSection = () => {
   const transportServices = [
