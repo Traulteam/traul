@@ -8,9 +8,10 @@ const DeliveryMethodsSection = () => {
   const transportServices = [
     {
       title: "2-Wheeler Delivery",
-      subtitle: "Perfect for urgent, lightweight deliveries",
-      capacity: "Up to 20kg",
-      deliveryTime: "30-60 mins",
+      subtitle:
+        "Perfect for fast, city-wide deliveries of lightweight items. Ideal for businesses needing quick dispatch of parcels with real-time tracking.",
+      capacity: "Up to 20kg - 30kg",
+      deliveryTime: "Rs. 50",
       perfectFor: [
         "Documents & Parcels",
         "Food Delivery",
@@ -20,15 +21,51 @@ const DeliveryMethodsSection = () => {
       icon: Transport,
     },
     {
-      title: "Mini Truck Services",
-      subtitle: "Complete range of commercial vehicles",
-      capacity: "500kg - 3 tons",
-      deliveryTime: "1-3 hours",
+      title: "3-Wheeler Cargo",
+      subtitle:
+        "Compact and agile, this 3-wheeler is great for urban areas and narrow roads. Ideal for small businesses and retail deliveries across short distances.",
+      capacity: "400 – 500 kg",
+      deliveryTime: "Rs. 230",
+      perfectFor: ["Packaged goods", "Groceries", "Hardware items"],
+      icon: truck,
+    },
+    {
+      title: "Tata Ace / Chota Hathi",
+      subtitle:
+        "Reliable and spacious enough for moderate loads. The Tata Ace is perfect for shops, construction sites, and home shifting needs within city limits.",
+      capacity: "700 – 750 kg",
+      deliveryTime: "Rs. 270",
+      perfectFor: ["Furniture", "Construction Materials", "Shop Stock"],
+      icon: truck,
+    },
+    {
+      title: "Pickup 8ft",
+      subtitle:
+        "A strong and versatile choice for heavier deliveries. Ideal for B2B, hardware dealers, or shifting large loads across neighborhoods or towns.",
+      capacity: "1000 – 1200 kg",
+      deliveryTime: "Rs. 320",
+      perfectFor: ["Cement Bags", "Home Shifting", "Shop Relocation"],
+      icon: truck,
+    },
+    {
+      title: "Pickup 9ft",
+      subtitle:
+        "Spacious and sturdy for high-volume or medium-distance goods movement. Suits both commercial and semi-industrial logistics within and across cities.",
+      capacity: "1500 – 1700 kg",
+      deliveryTime: "Rs. 400",
+      perfectFor: ["Retail Supply", "Heavy Appliances", "Carton Loads"],
+      icon: truck,
+    },
+    {
+      title: "Eicher 14ft",
+      subtitle:
+        "Traul's biggest carrier, ideal for large and heavy shipments over longer distances. Used by wholesalers, warehouses, event planners, and manufacturers.",
+      capacity: "2000 – 3000 kg",
+      deliveryTime: "Rs. 550",
       perfectFor: [
-        "3 Wheeler (500 kg)",
-        "Tata Ace (750 kg)",
-        "Pickup 8ft & 9ft (1-1.7 tons)",
-        "Eicher 14ft (2-3 tons)",
+        "Bulk Wholesale Goods",
+        "Event Equipment",
+        "Long-Distance Supply",
       ],
       icon: truck,
     },
@@ -130,7 +167,7 @@ const DeliveryMethodsSection = () => {
   };
 
   return (
-    <div className="bg-black text-white pt-16">
+    <div className="bg-black text-white pt-16 pb-16">
       <div className="w-full mx-auto">
         {/* Transport Services Cards */}
         <motion.div
@@ -143,7 +180,11 @@ const DeliveryMethodsSection = () => {
           {transportServices.map((service, index) => (
             <motion.div
               key={index}
-              className="border-b border-gray-700 pb-10 last:border-b-0 mb-20"
+              className={`pb-10 ${
+                index < transportServices.length - 1
+                  ? "border-b border-gray-700 mb-20"
+                  : "mb-8"
+              }`}
               variants={cardVariants}
             >
               <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
@@ -187,7 +228,7 @@ const DeliveryMethodsSection = () => {
                       </div>
                       <div className="bg-orange-500/10 p-4 rounded-lg">
                         <p className="text-orange-400 text-sm font-medium mb-1">
-                          Delivery Time
+                          Price starts from
                         </p>
                         <p className="text-white font-bold">
                           {service.deliveryTime}
