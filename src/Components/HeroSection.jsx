@@ -42,7 +42,7 @@ function HeroSection() {
         >
           Book 2-wheeler & mini truck in seconds. Fast, affordable, and
           trackable delivery services across{" "}
-          <span className="text-black font-semibold">Vijaywada</span>, and
+          <span className="text-black font-semibold">Vijaywada</span> and
           beyond.
         </motion.p>
       </div>
