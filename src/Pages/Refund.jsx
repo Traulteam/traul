@@ -19,18 +19,18 @@ function Refund() {
           {/* Title Section */}
           <div className="space-y-6">
             <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-              Terms and Conditions
+              Refund Policy
             </h1>
             <div className="h-1 w-32 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
           </div>
 
           {/* Subtitle */}
           <p className="text-gray-300 text-xl lg:text-2xl leading-relaxed text-justify max-w-3xl">
-            Please Read Our Terms and Conditions Your use of our services is
-            subject to the terms outlined in our comprehensive Terms and
-            Conditions. Download and review the full document to understand your
-            rights, responsibilities, and the rules governing your use of our
-            website and services.
+            Please Read Our Refund Policy Your use of our services is subject to
+            the terms outlined in our comprehensive Refund Policy. Download and
+            review the full document to understand the conditions under which
+            refunds are granted, your eligibility, and the procedures for
+            requesting a refund.
           </p>
 
           {/* Download Button */}
@@ -52,7 +52,7 @@ function Refund() {
                   d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                 />
               </svg>
-              Download Privacy Policy PDF
+              Download Refund Policy PDF
               <span className="ml-2">→</span>
             </button>
           </div>
@@ -80,7 +80,7 @@ function Refund() {
               Secure & Transparent
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              Our privacy policy is regularly updated to reflect current
+              Our refund policy is regularly updated to reflect current
               practices and regulations. Last updated: January 2025
             </p>
           </div>

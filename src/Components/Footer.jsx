@@ -79,7 +79,7 @@ const Footer = () => {
 
   const legalLinks = [
     { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
+    { label: "Terms and Condition", href: "/terms" },
   ];
 
   return (
@@ -178,23 +178,25 @@ const Footer = () => {
                 >
                   How It Works
                 </a>
-                <a
+                <Link
+                  to={"/disclaimer"}
                   href="#"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  Pricing
-                </a>
-                <a
+                  Disclaimer Policy
+                </Link>
+                <Link
+                  to={"/cancel"}
                   href="#"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  Contact Support
-                </a>
+                  Cancellation Policy
+                </Link>
                 <Link
                   to="/refund"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  Terms & Conditions
+                  Refund Policy
                 </Link>
               </div>
             </div>
@@ -205,7 +207,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2024 Traul. All rights reserved. Redefining Last-Mile Logistics
+              © 2025 Traul. All rights reserved. Redefining Last-Mile Logistics
               for Bharat.
             </p>
             <nav className="flex items-center gap-6">

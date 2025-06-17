@@ -21,6 +21,12 @@ function Header() {
     setIsMenuOpen(false); // Close menu after scroll
   }, []);
 
+  // Handle logo click - scroll to top and navigate to home
+  const handleLogoClick = useCallback(() => {
+    // Always scroll to top when logo is clicked
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   // Handle scroll detection
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +81,7 @@ function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/">
+        <Link to="/" onClick={handleLogoClick}>
           <img src={logo} alt="Traul Logo" className="w-20 rounded-md" />
         </Link>
 

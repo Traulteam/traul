@@ -7,6 +7,8 @@ import ContactPage from "./Pages/ContactPage";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import TermsCondition from "./Pages/TermsCondition";
 import Refund from "./Pages/Refund";
+import Cancellation from "./Pages/Cancellation";
+import Disclaimer from "./Pages/Disclaimer";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsCondition />} />
           <Route path="/refund" element={<Refund />} />
+          <Route path="/cancel" element={<Cancellation />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -6,29 +6,44 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What shipping services do you offer?",
+      question: "What services does traul offer?",
       answer:
-        "We offer comprehensive logistics solutions including domestic shipping, international freight, express delivery, and specialized transport for fragile or high-value items. Our services cover ground, air, and sea transport options.",
+        "Traul provides instant and scheduled goods transport services using 2-wheelers and mini trucks for both local and outstation deliveries across Andhra Pradesh.",
     },
     {
-      question: "How do I track my shipment?",
+      question: "Do you support same-day delivery?",
       answer:
-        "You can track your shipment using our online tracking system. Simply enter your tracking number on our website or mobile app to get real-time updates on your package's location and delivery status.",
+        "Yes, absolutely! Most local deliveries are completed within 1-2 hours of booking, making us perfect for urgent transport needs.",
     },
     {
-      question: "Do you provide same-day delivery?",
+      question: "⁠Can I track my delivery in real-time?",
       answer:
-        "Yes, we offer same-day delivery services in major metropolitan areas. This premium service is available for urgent shipments and comes with priority handling and dedicated transport.",
+        "Yes, you can track your driver's location and delivery status in real-time through our app with live GPS updates and notifications.",
     },
     {
-      question: "What are your shipping rates?",
+      question: "What types of goods can I transport?",
       answer:
-        "Our shipping rates depend on package size, weight, destination, and delivery speed. We offer competitive pricing with transparent fees. Use our online calculator or contact our team for a detailed quote.",
+        "We transport all legal and safe goods including groceries, appliances, furniture, electronics, agricultural products, documents, and business inventory.",
     },
     {
-      question: "Do you provide insurance coverage?",
+      question: "Are your drivers background-verified?",
       answer:
-        "Yes, we offer comprehensive insurance coverage for your shipments. Our insurance options protect against loss, damage, or theft during transit, giving you peace of mind for valuable packages.",
+        "Yes, all our drivers undergo comprehensive background verification, ID checks, vehicle inspection, and professional onboarding before joining our platform.",
+    },
+    {
+      question: "Do you provide intercity/outstation services?",
+      answer:
+        "Yes, we cover trips up to 200 km radius from your pickup location, connecting Vijayawada, Guntur, Bhimavaram, and surrounding areas..",
+    },
+    {
+      question: "Can I schedule deliveries for later?",
+      answer:
+        "Absolutely! Traul supports advance scheduling for both business and personal deliveries, allowing you to plan your logistics ahead of time.",
+    },
+    {
+      question: "How is pricing calculated?",
+      answer:
+        "Our transparent pricing is based on distance, vehicle type, and optional waiting time. You'll see the exact estimate before confirming your booking",
     },
   ];
 
