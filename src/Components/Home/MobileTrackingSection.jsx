@@ -10,33 +10,33 @@ const MobileTrackingSection = () => {
 
   return (
     <div
-      className="bg-gradient-to-br from-gray-50 to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20"
+      className="bg-gradient-to-br from-gray-50 to-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"
       id="mobile-tracking-section"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24">
+        <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16 xl:gap-20">
           {/* Left side - Side by Side Phones */}
-          <div className="w-full lg:w-1/2 flex justify-center overflow-hidden">
-            <div className="flex gap-2 sm:gap-4 md:gap-6 lg:gap-8 items-center max-w-full">
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <div className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center justify-center max-w-full">
               {/* First Phone */}
-              <div className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-6 flex-1 min-w-0">
-                <div className="w-36 h-72 xs:w-40 xs:h-80 sm:w-48 sm:h-96 md:w-56 md:h-[450px] lg:w-64 lg:h-[520px] bg-gradient-to-br from-orange-100 to-orange-200 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] flex items-center justify-center shadow-lg sm:shadow-xl md:shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 relative max-w-full">
-                  <div className="w-full h-full bg-black rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] p-1 sm:p-1.5 md:p-2">
+              <div className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-6">
+                <div className="w-32 h-64 xs:w-36 xs:h-72 sm:w-44 sm:h-88 md:w-52 md:h-[420px] lg:w-60 lg:h-[480px] xl:w-64 xl:h-[520px] bg-gradient-to-br from-orange-100 to-orange-200 rounded-[1.25rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[2.5rem] flex items-center justify-center shadow-lg sm:shadow-xl md:shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 relative">
+                  <div className="w-full h-full bg-black rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-1 sm:p-1.5 md:p-2">
                     <img
                       src={phone1}
                       alt="GoCargo App Interface"
-                      className="object-cover w-full h-full rounded-[0.75rem] sm:rounded-[1rem] md:rounded-[1.5rem]"
+                      className="object-cover w-full h-full rounded-[0.75rem] sm:rounded-[1rem] md:rounded-[1.25rem] lg:rounded-[1.5rem]"
                     />
                   </div>
                   {/* Phone highlight effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem]"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[1.25rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[2.5rem]"></div>
                 </div>
 
                 {/* Android Download Button */}
-                <button className="group bg-gray-900 text-white px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-medium flex items-center justify-center gap-1 sm:gap-2 md:gap-3 hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm md:text-base w-full max-w-[140px] sm:max-w-[160px] md:max-w-[180px] lg:max-w-none">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-green-500 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
+                <button className="group bg-gray-900 text-white px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-medium flex items-center justify-center gap-1 sm:gap-2 md:gap-3 hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm md:text-base w-full max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] xl:max-w-none">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 bg-green-500 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg
-                      className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-5 md:h-5 text-white"
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 text-white"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
@@ -44,10 +44,10 @@ const MobileTrackingSection = () => {
                     </svg>
                   </div>
                   <div className="text-left min-w-0 flex-1">
-                    <div className="text-xs text-gray-300 hidden md:block">
+                    <div className="text-xs text-gray-300 hidden sm:hidden md:block lg:block">
                       Download for
                     </div>
-                    <div className="text-xs sm:text-sm md:text-lg font-semibold truncate">
+                    <div className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold truncate">
                       Android
                     </div>
                   </div>
@@ -55,24 +55,24 @@ const MobileTrackingSection = () => {
               </div>
 
               {/* Second Phone */}
-              <div className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-6 flex-1 min-w-0">
-                <div className="w-36 h-72 xs:w-40 xs:h-80 sm:w-48 sm:h-96 md:w-56 md:h-[450px] lg:w-64 lg:h-[520px] bg-gradient-to-br from-blue-100 to-blue-200 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] flex items-center justify-center shadow-lg sm:shadow-xl md:shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 relative max-w-full">
-                  <div className="w-full h-full bg-black rounded-[1rem] sm:rounded-[1.5rem] md:rounded-[2rem] p-1 sm:p-1.5 md:p-2">
+              <div className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-6">
+                <div className="w-32 h-64 xs:w-36 xs:h-72 sm:w-44 sm:h-88 md:w-52 md:h-[420px] lg:w-60 lg:h-[480px] xl:w-64 xl:h-[520px] bg-gradient-to-br from-blue-100 to-blue-200 rounded-[1.25rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[2.5rem] flex items-center justify-center shadow-lg sm:shadow-xl md:shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 relative">
+                  <div className="w-full h-full bg-black rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[2rem] p-1 sm:p-1.5 md:p-2">
                     <img
                       src={phone2}
                       alt="GoCargo Tracking Interface"
-                      className="object-cover w-full h-full rounded-[0.75rem] sm:rounded-[1rem] md:rounded-[1.5rem]"
+                      className="object-cover w-full h-full rounded-[0.75rem] sm:rounded-[1rem] md:rounded-[1.25rem] lg:rounded-[1.5rem]"
                     />
                   </div>
                   {/* Phone highlight effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem]"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[1.25rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[2.5rem]"></div>
                 </div>
 
                 {/* iOS Download Button */}
-                <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-medium flex items-center justify-center gap-1 sm:gap-2 md:gap-3 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm md:text-base w-full max-w-[140px] sm:max-w-[160px] md:max-w-[180px] lg:max-w-none">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-white/20 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
+                <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-medium flex items-center justify-center gap-1 sm:gap-2 md:gap-3 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm md:text-base w-full max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] xl:max-w-none">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 bg-white/20 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg
-                      className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-5 md:h-5 text-white"
+                      className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 text-white"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
@@ -80,10 +80,10 @@ const MobileTrackingSection = () => {
                     </svg>
                   </div>
                   <div className="text-left min-w-0 flex-1">
-                    <div className="text-xs text-blue-100 hidden md:block">
+                    <div className="text-xs text-blue-100 hidden sm:hidden md:block lg:block">
                       Download for
                     </div>
-                    <div className="text-xs sm:text-sm md:text-lg font-semibold truncate">
+                    <div className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold truncate">
                       iOS
                     </div>
                   </div>
@@ -95,12 +95,12 @@ const MobileTrackingSection = () => {
           {/* Right side - Content */}
           <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 md:space-y-10 text-center lg:text-left">
             <div className="space-y-4 sm:space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 bg-orange-100 text-orange-700 rounded-full text-xs sm:text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-orange-100 text-orange-700 rounded-full text-xs sm:text-sm font-medium">
                 <Smartphone className="w-3 h-3 sm:w-4 sm:h-4" />
                 Mobile Application
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
                 Track Your Packages{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
                   Anywhere
@@ -111,14 +111,14 @@ const MobileTrackingSection = () => {
                 </span>
               </h2>
 
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Experience seamless package tracking with the GoCargo mobile
                 app. Get real-time updates, delivery notifications, and complete
                 control over your shipments right from your smartphone.
               </p>
 
               {/* Features list */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4 max-w-md mx-auto lg:max-w-none lg:mx-0">
+              <div className="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4 max-w-sm xs:max-w-md sm:max-w-lg mx-auto lg:max-w-none lg:mx-0">
                 {[
                   "Real-time tracking",
                   "Push notifications",
@@ -127,10 +127,10 @@ const MobileTrackingSection = () => {
                 ].map((feature, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 justify-center lg:justify-start"
+                    className="flex items-center gap-2 sm:gap-3 justify-center lg:justify-start"
                   >
-                    <div className="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></div>
-                    <span className="text-sm sm:text-base text-gray-700 font-medium">
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">
                       {feature}
                     </span>
                   </div>
@@ -140,10 +140,10 @@ const MobileTrackingSection = () => {
 
             {/* QR Code Instructions */}
             <div className="bg-gradient-to-r from-orange-50 to-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-orange-100 max-w-2xl mx-auto lg:mx-0">
-              <div className="flex items-center gap-3 mb-3 justify-center lg:justify-start">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 justify-center lg:justify-start">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg
-                    className="w-3 h-3 sm:w-5 sm:h-5 text-white"
+                    className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -151,11 +151,11 @@ const MobileTrackingSection = () => {
                     <path d="M5 5h4v4H5V5zm10 0h4v4h-4V5zM5 15h4v4H5v-4zm10 0h4v4h-4v-4z" />
                   </svg>
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900">
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900">
                   Quick Download
                 </h3>
               </div>
-              <p className="text-sm sm:text-base text-gray-600 text-center lg:text-left">
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 text-center lg:text-left">
                 Scan the QR codes with your phone camera to instantly download
                 the GoCargo app from your device's app store.
               </p>

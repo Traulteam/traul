@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import truck from "/truck3.png";
 import scooty from "/asset4.png";
 import threeWheeler from "/asset3.png";
 import tataAce from "/asset2.png";
