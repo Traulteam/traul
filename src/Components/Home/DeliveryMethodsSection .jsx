@@ -171,11 +171,11 @@ const DeliveryMethodsSection = () => {
   };
 
   return (
-    <div className="bg-black text-white pt-16 pb-16">
+    <div className="bg-black text-white pt-8 md:pt-16 pb-8 md:pb-16 px-4 md:px-6">
       <div className="w-full mx-auto">
         {/* Transport Services Cards */}
         <motion.div
-          className="space-y-8"
+          className="space-y-6 md:space-y-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -184,57 +184,68 @@ const DeliveryMethodsSection = () => {
           {transportServices.map((service, index) => (
             <motion.div
               key={index}
-              className={`pb-10 ${
+              className={`pb-6 md:pb-10 ${
                 index < transportServices.length - 1
-                  ? "border-b border-gray-700 mb-20"
-                  : "mb-8"
+                  ? "border-b border-gray-700 mb-12 md:mb-20"
+                  : "mb-6 md:mb-8"
               }`}
               variants={cardVariants}
             >
-              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 md:gap-8 lg:gap-16">
                 {/* Left side - Title & Subtitle */}
-                <motion.div className="lg:w-1/3" variants={titleVariants}>
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
+                <motion.div
+                  className="w-full lg:w-1/3"
+                  variants={titleVariants}
+                >
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-3 leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-lg text-gray-400">{service.subtitle}</p>
+                  <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
+                    {service.subtitle}
+                  </p>
                 </motion.div>
 
                 {/* Middle section - Icon */}
                 <motion.div
-                  className="lg:w-1/3 flex justify-center"
+                  className="w-full lg:w-1/3 flex justify-center order-last lg:order-none"
                   variants={iconVariants}
                 >
                   <motion.div
-                    className="w-full max-w-lg h-32 overflow-hidden bg-gradient-to-r flex items-center justify-center shadow-lg"
+                    className="w-full max-w-xs md:max-w-sm lg:max-w-lg h-24 md:h-28 lg:h-32 overflow-hidden bg-gradient-to-r flex items-center justify-center shadow-lg"
                     whileHover={{
                       scale: 1.05,
                       transition: { duration: 0.3 },
                     }}
                   >
-                    {/* <span className="text-6xl">{service.icon}</span> */}
-                    <img src={service.icon} alt="" className="w-40" />
+                    <img
+                      src={service.icon}
+                      alt={service.title}
+                      className="w-24 sm:w-28 md:w-32 lg:w-40 h-auto object-contain"
+                    />
                   </motion.div>
                 </motion.div>
 
                 {/* Right side - Service Details */}
-                <motion.div className="lg:w-1/3" variants={contentVariants}>
-                  <div className="space-y-4">
+                <motion.div
+                  className="w-full lg:w-1/3"
+                  variants={contentVariants}
+                >
+                  <div className="space-y-3 md:space-y-4">
                     {/* Capacity and Delivery Time */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="bg-blue-500/10 p-4 rounded-lg">
-                        <p className="text-blue-400 text-sm font-medium mb-1">
+                    <div className="grid grid-cols-1 gap-3 md:gap-4">
+                      <div className="bg-blue-500/10 p-3 md:p-4 rounded-lg">
+                        <p className="text-blue-400 text-xs md:text-sm font-medium mb-1">
                           Capacity
                         </p>
-                        <p className="text-white font-bold">
+                        <p className="text-white font-bold text-sm md:text-base">
                           {service.capacity}
                         </p>
                       </div>
-                      <div className="bg-orange-500/10 p-4 rounded-lg">
-                        <p className="text-orange-400 text-sm font-medium mb-1">
+                      <div className="bg-orange-500/10 p-3 md:p-4 rounded-lg">
+                        <p className="text-orange-400 text-xs md:text-sm font-medium mb-1">
                           Price starts from
                         </p>
-                        <p className="text-white font-bold">
+                        <p className="text-white font-bold text-sm md:text-base">
                           {service.deliveryTime}
                         </p>
                       </div>
@@ -242,17 +253,19 @@ const DeliveryMethodsSection = () => {
 
                     {/* Perfect For Section */}
                     <div>
-                      <p className="text-white font-semibold mb-3">
+                      <p className="text-white font-semibold mb-2 md:mb-3 text-sm md:text-base">
                         Perfect for:
                       </p>
-                      <div className="space-y-2">
+                      <div className="space-y-1.5 md:space-y-2">
                         {service.perfectFor.map((item, itemIndex) => (
                           <div
                             key={itemIndex}
-                            className="flex items-center gap-3"
+                            className="flex items-center gap-2 md:gap-3"
                           >
-                            <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
-                            <p className="text-gray-300">{item}</p>
+                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full flex-shrink-0"></div>
+                            <p className="text-gray-300 text-xs sm:text-sm md:text-base">
+                              {item}
+                            </p>
                           </div>
                         ))}
                       </div>
@@ -261,19 +274,20 @@ const DeliveryMethodsSection = () => {
 
                   {/* Orange accent dot */}
                   <motion.div
-                    className="mt-6 flex items-center gap-3"
+                    className="mt-4 md:mt-6 flex items-center gap-2 md:gap-3"
                     variants={accentVariants}
                   >
                     <motion.div
-                      className="w-3 h-3 bg-orange-500 rounded-full"
+                      className="w-2 h-2 md:w-3 md:h-3 bg-orange-500 rounded-full"
                       whileHover={{ scale: 1.2 }}
                     ></motion.div>
                     <motion.div
-                      className="w-8 h-0.5 bg-orange-500"
+                      className="w-6 md:w-8 h-0.5 bg-orange-500"
                       initial={{ width: 0 }}
-                      whileInView={{ width: "2rem" }}
+                      whileInView={{ width: "1.5rem" }}
                       transition={{ duration: 0.6, delay: 0.5 }}
                       viewport={{ once: true }}
+                      // className="md:w-8"
                     ></motion.div>
                   </motion.div>
                 </motion.div>
