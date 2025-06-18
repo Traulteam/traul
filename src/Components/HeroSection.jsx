@@ -9,11 +9,8 @@ function HeroSection() {
       <img
         src={hero}
         alt="Delivery logistics hero"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 lg:w-full h-full object-cover"
       />
-
-      {/* Overlay for better text readability */}
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div> */}
 
       {/* Content */}
       <div className="relative z-10 text-center text-black px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl w-full">

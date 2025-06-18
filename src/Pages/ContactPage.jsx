@@ -26,9 +26,9 @@ const ContactPage = () => {
 
     try {
       // EmailJS configuration - replace with your actual values
-      const serviceId = "YOUR_SERVICE_ID";
-      const templateId = "YOUR_TEMPLATE_ID";
-      const publicKey = "YOUR_PUBLIC_KEY";
+      const serviceId = "service_8ltin0x";
+      const templateId = "template_pf9z3pp";
+      const publicKey = "BRfh47i2hK2ZXCmjO";
 
       // Load EmailJS if not already loaded
       if (!window.emailjs) {
@@ -298,14 +298,10 @@ const ContactPage = () => {
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Saturday</span>
+                  <span className="text-gray-300">Saturday - Sunday</span>
                   <span className="text-orange-400 font-medium">
                     10:00 AM - 4:00 PM
                   </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Sunday</span>
-                  <span className="text-gray-500">Closed</span>
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t border-gray-700">
