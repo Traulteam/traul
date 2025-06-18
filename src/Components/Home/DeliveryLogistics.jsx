@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import { Package, Shield, Headphones, Clock } from "lucide-react";
 

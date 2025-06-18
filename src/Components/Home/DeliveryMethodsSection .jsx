@@ -2,7 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import truck from "/truck3.png";
-import Transport from "/transport3.png";
+import scooty from "/asset4.png";
+import threeWheeler from "/asset3.png";
+import tataAce from "/asset2.png";
+import pickup from "/asset5.png";
+import pickup2 from "/asset6.png";
+import eicher from "/asset1.png";
 
 const DeliveryMethodsSection = () => {
   const transportServices = [
@@ -18,7 +23,7 @@ const DeliveryMethodsSection = () => {
         "Pharma Supplies",
         "Small Electronics",
       ],
-      icon: Transport,
+      icon: scooty,
     },
     {
       title: "3-Wheeler Cargo",
@@ -27,7 +32,7 @@ const DeliveryMethodsSection = () => {
       capacity: "400 – 500 kg",
       deliveryTime: "Rs. 230",
       perfectFor: ["Packaged goods", "Groceries", "Hardware items"],
-      icon: truck,
+      icon: threeWheeler,
     },
     {
       title: "Tata Ace / Chota Hathi",
@@ -36,7 +41,7 @@ const DeliveryMethodsSection = () => {
       capacity: "700 – 750 kg",
       deliveryTime: "Rs. 270",
       perfectFor: ["Furniture", "Construction Materials", "Shop Stock"],
-      icon: truck,
+      icon: tataAce,
     },
     {
       title: "Pickup 8ft",
@@ -45,7 +50,7 @@ const DeliveryMethodsSection = () => {
       capacity: "1000 – 1200 kg",
       deliveryTime: "Rs. 320",
       perfectFor: ["Cement Bags", "Home Shifting", "Shop Relocation"],
-      icon: truck,
+      icon: pickup,
     },
     {
       title: "Pickup 9ft",
@@ -54,7 +59,7 @@ const DeliveryMethodsSection = () => {
       capacity: "1500 – 1700 kg",
       deliveryTime: "Rs. 400",
       perfectFor: ["Retail Supply", "Heavy Appliances", "Carton Loads"],
-      icon: truck,
+      icon: pickup2,
     },
     {
       title: "Eicher 14ft",
@@ -67,7 +72,7 @@ const DeliveryMethodsSection = () => {
         "Event Equipment",
         "Long-Distance Supply",
       ],
-      icon: truck,
+      icon: eicher,
     },
   ];
 
