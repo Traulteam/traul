@@ -89,7 +89,8 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Visit Our Office",
-      content: "123 Logistics Street\nBusiness District, City 12345",
+      content:
+        "Flat no: 406\nPoojitha Waterfront Apartments\nKunchanapalli, India,52250",
       action: "Get Directions",
     },
     {
@@ -99,7 +100,7 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Call Us",
-      content: "+1 (555) 123-4567\nMon-Fri 9AM-6PM EST",
+      content: "+91 9646443444\nMon-Fri 9AM-6PM EST",
       action: "Call Now",
     },
   ];
