@@ -26,9 +26,9 @@ const ContactPage = () => {
 
     try {
       // EmailJS configuration - replace with your actual values
-      const serviceId = "service_8ltin0x";
-      const templateId = "template_pf9z3pp";
-      const publicKey = "BRfh47i2hK2ZXCmjO";
+      const serviceId = "service_ljrtlpm";
+      const templateId = "template_vrliyjx";
+      const publicKey = "kb9h18Ut8n73eP2f2";
 
       // Load EmailJS if not already loaded
       if (!window.emailjs) {
