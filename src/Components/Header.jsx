@@ -7,7 +7,14 @@ function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  const isPrivacyPage = location.pathname === "/privacy";
+  // Check if current page is one of the policy pages that should have white background
+  const isPolicyPage = [
+    "/privacy",
+    "/terms",
+    "/refund",
+    "/cancel",
+    "/disclaimer",
+  ].includes(location.pathname);
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prev) => !prev);
@@ -37,19 +44,8 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock scroll when menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    // Cleanup on unmount
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isMenuOpen]);
+  // Handle body scroll lock for mobile menu - REMOVED THE PROBLEMATIC CODE
+  // The mobile menu will handle its own scrolling within the container
 
   // Close menu on route change
   useEffect(() => {
@@ -69,11 +65,11 @@ function Header() {
   }, []);
 
   const headerBg =
-    isScrolled || isPrivacyPage
+    isScrolled || isPolicyPage
       ? "bg-white text-black shadow-sm"
       : "bg-transparent text-white";
 
-  const menuLineColor = isScrolled || isPrivacyPage ? "bg-black" : "bg-white";
+  const menuLineColor = isScrolled || isPolicyPage ? "bg-black" : "bg-white";
 
   return (
     <header
@@ -136,8 +132,10 @@ function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-white text-black transition-all duration-300 ease-in-out overflow-hidden ${
-          isMenuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden bg-white text-black transition-all duration-300 ease-in-out ${
+          isMenuOpen
+            ? "max-h-96 opacity-100 overflow-y-auto"
+            : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
         <nav className="flex flex-col px-4 py-4 space-y-4">

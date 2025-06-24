@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -63,9 +64,11 @@ const FAQ = () => {
             <p className="text-gray-300 text-lg leading-relaxed">
               Have a More Question About the Logistics Services
             </p>
-            <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25">
-              Let Me Know
-            </button>
+            <Link to={"/contact-us"}>
+              <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25">
+                Let us Know
+              </button>
+            </Link>
           </div>
 
           {/* Right Side - FAQ Items */}

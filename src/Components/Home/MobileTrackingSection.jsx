@@ -10,7 +10,7 @@ const MobileTrackingSection = () => {
 
   return (
     <div
-      className="bg-gradient-to-br from-gray-50 to-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"
+      className="bg-gradient-to-br from-gray-50 overflow-hidden to-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"
       id="mobile-tracking-section"
     >
       <div className="max-w-7xl mx-auto">
@@ -120,23 +120,20 @@ const MobileTrackingSection = () => {
               </h2>
 
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Experience seamless package tracking with the GoCargo mobile
-                app. Get real-time updates, delivery notifications, and complete
+                Experience seamless package tracking with the Traul mobile app.
+                Get real-time updates, delivery notifications, and complete
                 control over your shipments right from your smartphone.
               </p>
 
-              {/* Features list */}
-              <div className="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4 max-w-sm xs:max-w-md sm:max-w-lg mx-auto lg:max-w-none lg:mx-0">
+              {/* Features list - Fixed alignment */}
+              <div className="space-y-3 sm:space-y-4 pt-2 sm:pt-4 left-25 lg:left-0 relative ">
                 {[
                   "Real-time tracking",
                   "Push notifications",
                   "Delivery history",
                   "Easy scheduling",
                 ].map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 sm:gap-3 justify-center lg:justify-start"
-                  >
+                  <div key={index} className="flex items-center gap-2 sm:gap-3">
                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-500 rounded-full flex-shrink-0"></div>
                     <span className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">
                       {feature}
@@ -165,7 +162,7 @@ const MobileTrackingSection = () => {
               </div>
               <p className="text-xs sm:text-sm md:text-base text-gray-600 text-center lg:text-left">
                 Scan the QR codes with your phone camera to instantly download
-                the GoCargo app from your device's app store.
+                the Traul app from your device's app store.
               </p>
             </div>
           </div>
