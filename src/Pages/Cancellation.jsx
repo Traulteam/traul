@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Cancellation() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleDownloadPDF = () => {
     // Create a sample PDF download link
     // In a real application, this would link to your actual privacy policy PDF

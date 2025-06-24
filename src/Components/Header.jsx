@@ -78,7 +78,7 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" onClick={handleLogoClick}>
-          <img src={logo} alt="Traul Logo" className="w-20 rounded-md" />
+          <img src={logo} alt="Traul Logo" className="w-20" />
         </Link>
 
         {/* Desktop Nav */}
