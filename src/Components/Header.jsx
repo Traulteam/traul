@@ -14,6 +14,8 @@ function Header() {
     "/refund",
     "/cancel",
     "/disclaimer",
+    "/about-us",
+    "/booking",
   ].includes(location.pathname);
 
   const toggleMenu = useCallback(() => {
@@ -84,6 +86,12 @@ function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center justify-center flex-1 gap-8">
           <Link
+            to="/about-us"
+            className="hover:font-semibold text-sm lg:text-base text-black"
+          >
+            About Us
+          </Link>
+          <Link
             to="/contact-us"
             className="hover:font-semibold text-sm lg:text-base text-black"
           >
@@ -94,6 +102,12 @@ function Header() {
             className="hover:font-semibold text-sm lg:text-base text-black"
           >
             For Delivery
+          </Link>
+          <Link
+            to="/booking"
+            className="hover:font-semibold text-sm lg:text-base text-black"
+          >
+            Booking
           </Link>
         </nav>
 
@@ -139,6 +153,13 @@ function Header() {
         }`}
       >
         <nav className="flex flex-col px-4 py-4 space-y-4">
+          <Link
+            to="/about-us"
+            onClick={() => setIsMenuOpen(false)}
+            className="text-sm"
+          >
+            About Us
+          </Link>
           <Link
             to="/contact-us"
             onClick={() => setIsMenuOpen(false)}
