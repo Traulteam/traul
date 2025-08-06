@@ -197,9 +197,9 @@ const DeliveryMethodsSection = () => {
                   className="w-full lg:w-1/3"
                   variants={titleVariants}
                 >
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-3 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-3 leading-tight">
                     {service.title}
-                  </h3>
+                  </h2>
                   <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
                     {service.subtitle}
                   </p>

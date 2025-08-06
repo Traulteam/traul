@@ -28,6 +28,9 @@ const PrivacyPolicy = () => {
           </div>
 
           {/* Subtitle */}
+          <h2 className="text-2xl lg:text-3xl font-semibold text-gray-300 mb-4">
+            Privacy Information
+          </h2>
           <p className="text-gray-300 text-xl lg:text-2xl leading-relaxed max-w-3xl">
             Your privacy is important to us. Download our comprehensive privacy
             policy to understand how we collect, use, and protect your personal

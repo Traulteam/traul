@@ -1,151 +1,113 @@
-import { useEffect, useRef } from "react";
-import { FaShippingFast, FaUsers, FaHandshake } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { Truck, Users, Handshake, Shield, Clock, Globe } from "lucide-react";
 
 function WhatWeDo() {
-  const cardsRef = useRef(null);
-
   const cards = [
     {
       id: 1,
       title: "Fast & Reliable",
       description:
-        "Our network of drivers ensures your goods are delivered quickly and safely to their destination.",
-      icon: FaShippingFast,
-      iconColor: "text-blue-600",
-      backgroundColor: "bg-blue-50",
+        "Our network of verified drivers ensures your goods are delivered quickly and safely to their destination with real-time tracking.",
+      icon: Truck,
+      gradient: "from-blue-500 to-blue-600",
+      bgGradient: "from-blue-50 to-blue-100",
     },
     {
       id: 2,
       title: "For Everyone",
       description:
-        "From small personal items to large enterprise logistics, our platform is designed to cater to all needs.",
-      icon: FaUsers,
-      iconColor: "text-red-500",
-      backgroundColor: "bg-red-50",
+        "From small personal items to large enterprise logistics, our platform is designed to cater to all delivery needs and budgets.",
+      icon: Users,
+      gradient: "from-orange-500 to-orange-600",
+      bgGradient: "from-orange-50 to-orange-100",
     },
     {
       id: 3,
       title: "Trusted Partnerships",
       description:
-        "We build strong relationships with our drivers and customers, fostering a community built on trust.",
-      icon: FaHandshake,
-      iconColor: "text-green-600",
-      backgroundColor: "bg-green-50",
+        "We build strong relationships with our drivers and customers, fostering a community built on trust and mutual success.",
+      icon: Handshake,
+      gradient: "from-green-500 to-green-600",
+      bgGradient: "from-green-50 to-green-100",
+    },
+    {
+      id: 4,
+      title: "Secure & Safe",
+      description:
+        "Your goods are protected with comprehensive insurance coverage and secure handling throughout the delivery process.",
+      icon: Shield,
+      gradient: "from-purple-500 to-purple-600",
+      bgGradient: "from-purple-50 to-purple-100",
+    },
+    {
+      id: 5,
+      title: "24/7 Support",
+      description:
+        "Round-the-clock customer support ensures you're never alone. Get help whenever you need it, day or night.",
+      icon: Clock,
+      gradient: "from-red-500 to-red-600",
+      bgGradient: "from-red-50 to-red-100",
+    },
+    {
+      id: 6,
+      title: "Wide Coverage",
+      description:
+        "Extensive network covering multiple cities and routes, making us your go-to partner for all transportation needs.",
+      icon: Globe,
+      gradient: "from-indigo-500 to-indigo-600",
+      bgGradient: "from-indigo-50 to-indigo-100",
     },
   ];
 
-  useEffect(() => {
-    const style = document.createElement("style");
-    style.textContent = `
-      .fade-up-animate {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-
-      .fade-up-animate.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .card-hover-animate {
-        transition: all 0.3s ease;
-      }
-
-      .card-hover-animate:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-
-      .icon-bounce-animate:hover {
-        animation: bounceIcon 0.6s ease-in-out;
-      }
-
-      @keyframes bounceIcon {
-        0%, 20%, 53%, 80%, 100% {
-          transform: translate3d(0,0,0);
-        }
-        40%, 43% {
-          transform: translate3d(0, -8px, 0);
-        }
-        70% {
-          transform: translate3d(0, -4px, 0);
-        }
-        90% {
-          transform: translate3d(0, -2px, 0);
-        }
-      }
-    `;
-    document.head.appendChild(style);
-
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, observerOptions);
-
-    if (cardsRef.current) {
-      const cardElements = cardsRef.current.querySelectorAll(".card-animate");
-      cardElements.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.2}s`;
-        observer.observe(card);
-      });
-    }
-
-    return () => {
-      observer.disconnect();
-      document.head.removeChild(style);
-    };
-  }, []);
-
   return (
-    <section className="bg-gray-50 py-16 sm:py-24 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-      <div className="text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl leading-tight font-bold">
-          <span className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-            What <span className="text-orange-500">We Do</span>
-          </span>
-        </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed">
-          We leverage technology to provide on-demand delivery services, making
-          it easier than ever to move goods.
-        </p>
-      </div>
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-gradient-to-br from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true }}
+          className="text-center mb-12 sm:mb-16 md:mb-20"
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-bold mb-4 sm:mb-6 md:mb-8">
+            <span className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+              What <span className="text-orange-500">We Do</span>
+            </span>
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto px-2">
+            We leverage cutting-edge technology to provide on-demand delivery services, 
+            making it easier than ever to move goods efficiently and reliably.
+          </p>
+        </motion.div>
 
-      <div
-        ref={cardsRef}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        {cards.map((card) => {
-          const IconComponent = card.icon;
-          return (
-            <div
-              key={card.id}
-              className="card-animate fade-up-animate bg-white p-8 rounded-2xl shadow-sm card-hover-animate"
-            >
-              <div
-                className={`${card.backgroundColor} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 icon-bounce-animate`}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          {cards.map((card, index) => {
+            const IconComponent = card.icon;
+            return (
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className={`bg-gradient-to-br ${card.bgGradient} p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 group`}
               >
-                <IconComponent className={`w-8 h-8 ${card.iconColor}`} />
-              </div>
+                <div className={`bg-gradient-to-r ${card.gradient} w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
+                </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
-                {card.title}
-              </h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
+                  {card.title}
+                </h3>
 
-              <p className="text-gray-600 leading-relaxed">
-                {card.description}
-              </p>
-            </div>
-          );
-        })}
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                  {card.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

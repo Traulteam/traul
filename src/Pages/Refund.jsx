@@ -28,6 +28,9 @@ function Refund() {
           </div>
 
           {/* Subtitle */}
+          <h2 className="text-2xl lg:text-3xl font-semibold text-gray-300 mb-4">
+            Refund Information
+          </h2>
           <p className="text-gray-300 text-xl lg:text-2xl leading-relaxed text-justify max-w-3xl">
             Please Read Our Refund Policy Your use of our services is subject to
             the terms outlined in our comprehensive Refund Policy. Download and

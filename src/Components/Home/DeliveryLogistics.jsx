@@ -158,12 +158,12 @@ function DeliveryLogistics() {
         ref={headerRef}
         className="flex flex-col lg:flex-row items-start lg:items-center gap-8 justify-between mb-16"
       >
-        <h1 className="title-animate fade-left-animate text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl leading-tight font-bold">
+        <h2 className="title-animate fade-left-animate text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl leading-tight font-bold">
           <span className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
             How <span className="text-orange-500">Traul</span>
           </span>
           Works
-        </h1>
+        </h2>
 
         <div className="desc-animate fade-right-animate lg:ml-10 flex flex-col items-start">
           <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
