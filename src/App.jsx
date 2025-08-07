@@ -11,6 +11,7 @@ import Cancellation from "./Pages/Cancellation";
 import Disclaimer from "./Pages/Disclaimer";
 import About from "./Pages/About";
 import VijayawadaBookingPage from "./Pages/VijayawadaBookingPage";
+import AppDownload from "./Pages/AppDownload";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/booking" element={<VijayawadaBookingPage />} />
+          <Route path="/download" element={<AppDownload />} />
         </Routes>
         <Footer />
       </BrowserRouter>

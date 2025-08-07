@@ -16,18 +16,11 @@ function Header() {
     "/disclaimer",
     "/about-us",
     "/booking",
+    "/download",
   ].includes(location.pathname);
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prev) => !prev);
-  }, []);
-
-  const scrollToMobileSection = useCallback(() => {
-    const element = document.getElementById("mobile-tracking-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    setIsMenuOpen(false); // Close menu after scroll
   }, []);
 
   // Handle logo click - scroll to top and navigate to home
@@ -113,12 +106,12 @@ function Header() {
 
         {/* Download Button */}
         <div className="hidden md:block">
-          <button
-            onClick={scrollToMobileSection}
-            className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 text-sm lg:text-base"
+          <Link
+            to="/download"
+            className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 text-sm lg:text-base transition-colors duration-200"
           >
             Download App
-          </button>
+          </Link>
         </div>
 
         {/* Hamburger Icon */}
@@ -174,12 +167,13 @@ function Header() {
           >
             For Delivery
           </Link>
-          <button
-            onClick={scrollToMobileSection}
-            className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 text-sm w-fit"
+          <Link
+            to="/download"
+            onClick={() => setIsMenuOpen(false)}
+            className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 text-sm w-fit transition-colors duration-200"
           >
             Download App
-          </button>
+          </Link>
         </nav>
       </div>
     </header>

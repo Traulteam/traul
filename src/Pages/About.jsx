@@ -1,16 +1,12 @@
 import React from "react";
 import AboutHero from "../Components/AboutHero";
-import OurMission from "../Components/OurMission";
-import WhatWeDo from "../Components/WhatWeDo";
-import OurStory from "../Components/OurStory";
+import AboutContent from "../Components/AboutContent";
 
 function About() {
   return (
     <div>
       <AboutHero />
-      <OurMission />
-      <WhatWeDo />
-      <OurStory />
+      <AboutContent />
     </div>
   );
 }
