@@ -35,35 +35,6 @@ const itemVariants = {
 export default function AboutContent() {
   return (
     <div className="bg-white overflow-x-hidden">
-      {/* Hero Video Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/video.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/50"></div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="relative z-10 text-center text-white px-4 sm:px-6 md:px-8"
-        >
-          <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-orange-500/20 backdrop-blur-sm rounded-full text-orange-300 font-medium text-xs sm:text-sm mb-4 sm:mb-6">
-            Our Story
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Transforming <span className="text-orange-400">Logistics</span>
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-gray-200">
-            Building a smarter way to move goods in Vijayawada and beyond
-          </p>
-        </motion.div>
-      </section>
 
       {/* About Traul Section */}
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-gradient-to-br from-gray-50 to-orange-50">
