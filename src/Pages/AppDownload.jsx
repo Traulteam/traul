@@ -137,26 +137,50 @@ export default function AppDownload() {
       {/* Introduction Section */}
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-2">
-              About <span className="text-orange-500">Traul</span>
-            </h2>
-            <div className="max-w-4xl mx-auto space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
-              <p>
-                Traul is transforming how India moves — starting with Vijayawada. Whether you're a shopkeeper fulfilling customer orders, a household shifting appliances, or a trader moving stock between godowns — Traul brings convenience, speed, and transparency to your fingertips.
-              </p>
-              <p className="text-lg sm:text-xl font-medium text-gray-800">
-                No more calling random drivers. No more price guessing. No more waiting without updates.<br className="hidden sm:block" />
-                Just book, track, and deliver — all within one seamless app.
-              </p>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-2">
+                About <span className="text-orange-500">Traul</span>
+              </h2>
+              <div className="space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
+                <p>
+                  Traul is transforming how India moves — starting with Vijayawada. Whether you're a shopkeeper fulfilling customer orders, a household shifting appliances, or a trader moving stock between godowns — Traul brings convenience, speed, and transparency to your fingertips.
+                </p>
+                <p className="text-lg sm:text-xl font-medium text-gray-800">
+                  No more calling random drivers. No more price guessing. No more waiting without updates.<br className="hidden sm:block" />
+                  Just book, track, and deliver — all within one seamless app.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/delivery2.png" 
+                  alt="Traul delivery service" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
+                             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
+                 <Smartphone className="w-8 h-8 text-orange-500" />
+               </div>
+               <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4">
+                 <Truck className="w-8 h-8 text-orange-500" />
+               </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -290,42 +314,66 @@ export default function AppDownload() {
       {/* Getting Started Section */}
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-2">
-              Getting Started is <span className="text-orange-500">Easy</span>
-            </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-              Follow these simple steps to start using Traul for all your delivery needs
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            <motion.ol 
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-4 sm:space-y-6"
+              transition={{ duration: 0.8 }}
             >
-              {gettingStartedSteps.map((step, index) => (
-                <motion.li
-                  key={index}
-                  variants={itemVariants}
-                  className="flex items-center gap-4 sm:gap-6 bg-gradient-to-r from-gray-50 to-orange-50 p-4 sm:p-6 rounded-xl border border-orange-200"
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-2">
+                Getting Started is <span className="text-orange-500">Easy</span>
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 mb-8">
+                Follow these simple steps to start using Traul for all your delivery needs
+              </p>
+
+              <div className="space-y-4 sm:space-y-6">
+                <motion.ol 
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="space-y-4 sm:space-y-6"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 sm:w-12 sm:h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-white text-sm sm:text-lg">
-                    {index + 1}
-                  </div>
-                  <span className="text-base sm:text-lg text-gray-800 font-medium">{step}</span>
-                </motion.li>
-              ))}
-            </motion.ol>
+                  {gettingStartedSteps.map((step, index) => (
+                    <motion.li
+                      key={index}
+                      variants={itemVariants}
+                      className="flex items-center gap-4 sm:gap-6 bg-gradient-to-r from-gray-50 to-orange-50 p-4 sm:p-6 rounded-xl border border-orange-200"
+                    >
+                      <div className="flex-shrink-0 w-8 h-8 sm:w-12 sm:h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-white text-sm sm:text-lg">
+                        {index + 1}
+                      </div>
+                      <span className="text-base sm:text-lg text-gray-800 font-medium">{step}</span>
+                    </motion.li>
+                  ))}
+                </motion.ol>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/hero1.png" 
+                  alt="Traul app interface" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
+                             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
+                 <Download className="w-8 h-8 text-orange-500" />
+               </div>
+               <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4">
+                 <MapPin className="w-8 h-8 text-orange-500" />
+               </div>
+            </motion.div>
           </div>
         </div>
       </section>

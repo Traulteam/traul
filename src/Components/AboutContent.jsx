@@ -1,4 +1,4 @@
-import { CheckCircle, Smartphone, MapPin, Users, Truck, Package, Eye, UserCheck, Clock, PlusCircle, Globe, Target, Heart, Rocket, Building2, Home, ShoppingBag, Briefcase, CreditCard } from "lucide-react";
+import { CheckCircle, Smartphone, MapPin, Users, Truck, Package, Eye, UserCheck, Clock, PlusCircle, Globe, Target, Heart, Rocket, Building2, Home, ShoppingBag, Briefcase, CreditCard, Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [
@@ -35,43 +35,106 @@ const itemVariants = {
 export default function AboutContent() {
   return (
     <div className="bg-white overflow-x-hidden">
+      {/* Hero Video Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/50"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center text-white px-4 sm:px-6 md:px-8"
+        >
+          <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-orange-500/20 backdrop-blur-sm rounded-full text-orange-300 font-medium text-xs sm:text-sm mb-4 sm:mb-6">
+            Welcome to Traul
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            About <span className="text-orange-400">Traul</span>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-gray-200">
+            Building a smarter way to move goods in Vijayawada and beyond
+          </p>
+        </motion.div>
+      </section>
+
       {/* About Traul Section */}
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-orange-100 rounded-full text-orange-700 font-medium text-xs sm:text-sm mb-4 sm:mb-6">
-              Our Journey
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-2">
-              About <span className="text-orange-500">Traul</span>
-            </h2>
-            <div className="max-w-4xl mx-auto space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
-              <p>
-                At Traul, we're building a smarter way to move goods—starting with the vibrant city of Vijayawada.
-              </p>
-              <p>
-                Every day, shopkeepers, households, and traders struggle to find reliable mini truck or tempo services. Prices fluctuate, drivers are hard to reach, and delays are common. We knew there had to be a better way.
-              </p>
-              <p>
-                So we created <span className="font-semibold text-orange-500">Traul</span> — a mobile-first logistics platform that lets you book 2-wheelers or mini trucks instantly, with transparent pricing, live tracking, and local driver-partners who understand your routes.
-              </p>
-              <p className="text-lg sm:text-xl font-medium text-gray-800">
-                We're not just moving goods. We're moving the entire logistics experience forward — one delivery at a time.
-              </p>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-orange-100 rounded-full text-orange-700 font-medium text-xs sm:text-sm mb-4 sm:mb-6">
+                Our Journey
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-2">
+                About <span className="text-orange-500">Traul</span>
+              </h2>
+              <div className="space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
+                <p>
+                  At Traul, we're building a smarter way to move goods—starting with the vibrant city of Vijayawada.
+                </p>
+                <p>
+                  Every day, shopkeepers, households, and traders struggle to find reliable mini truck or tempo services. Prices fluctuate, drivers are hard to reach, and delays are common. We knew there had to be a better way.
+                </p>
+                <p>
+                  So we created <span className="font-semibold text-orange-500">Traul</span> — a mobile-first logistics platform that lets you book 2-wheelers or mini trucks instantly, with transparent pricing, live tracking, and local driver-partners who understand your routes.
+                </p>
+                <p className="text-lg sm:text-xl font-medium text-gray-800">
+                  We're not just moving goods. We're moving the entire logistics experience forward — one delivery at a time.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/delivery.jpg" 
+                  alt="Traul delivery service" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
+                             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
+                 <Truck className="w-8 h-8 text-orange-500" />
+               </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* What Makes Us Different Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="/transport1.png" 
+            alt="" 
+            className="absolute top-10 right-10 w-32 h-32 object-contain"
+          />
+          <img 
+            src="/transport2.png" 
+            alt="" 
+            className="absolute bottom-10 left-10 w-32 h-32 object-contain"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -133,23 +196,42 @@ export default function AboutContent() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-orange-50 to-red-50 p-6 sm:p-8 md:p-12 rounded-2xl border border-orange-200 max-w-4xl mx-auto"
-          >
-            <div className="text-center">
-              <Globe className="w-12 h-12 sm:w-16 sm:h-16 text-orange-500 mx-auto mb-4 sm:mb-6" />
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Starting from Tier 2 cities like Vijayawada
-              </h3>
-              <p className="text-base sm:text-lg text-gray-700">
-                We're expanding rapidly to serve every corner of India, bringing modern logistics to where it's needed most.
-              </p>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-br from-orange-50 to-red-50 p-6 sm:p-8 md:p-12 rounded-2xl border border-orange-200"
+            >
+              <div className="text-center">
+                <Globe className="w-12 h-12 sm:w-16 sm:h-16 text-orange-500 mx-auto mb-4 sm:mb-6" />
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Starting from Tier 2 cities like Vijayawada
+                </h3>
+                <p className="text-base sm:text-lg text-gray-700">
+                  We're expanding rapidly to serve every corner of India, bringing modern logistics to where it's needed most.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <img 
+                src="/hero1.png" 
+                alt="Traul vision" 
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+                             <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4">
+                 <Package className="w-8 h-8 text-orange-500" />
+               </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -199,44 +281,68 @@ export default function AboutContent() {
       {/* Our First Stop Section */}
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-2">
-              Our First Stop: <span className="text-orange-500">Vijayawada</span>
-            </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-              We've launched in Vijayawada and are quickly expanding to serve every corner
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-orange-50 to-red-50 p-6 sm:p-8 md:p-12 rounded-2xl border border-orange-200 max-w-4xl mx-auto"
-          >
-            <div className="text-center">
-              <MapPin className="w-12 h-12 sm:w-16 sm:h-16 text-orange-500 mx-auto mb-4 sm:mb-6" />
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                From One Town to Gannavaram
-              </h3>
-              <p className="text-base sm:text-lg text-gray-700">
-                More cities coming soon. We're just getting started — and we're excited to have you with us.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <img 
+                src="/hero2.png" 
+                alt="Vijayawada city" 
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+                             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
+                 <MapPin className="w-8 h-8 text-orange-500" />
+               </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-2">
+                Our First Stop: <span className="text-orange-500">Vijayawada</span>
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 mb-8">
+                We've launched in Vijayawada and are quickly expanding to serve every corner
               </p>
-            </div>
-          </motion.div>
+              
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 sm:p-8 md:p-12 rounded-2xl border border-orange-200">
+                <div className="text-center">
+                  <MapPin className="w-12 h-12 sm:w-16 sm:h-16 text-orange-500 mx-auto mb-4 sm:mb-6" />
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    From One Town to Gannavaram
+                  </h3>
+                  <p className="text-base sm:text-lg text-gray-700">
+                    More cities coming soon. We're just getting started — and we're excited to have you with us.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Join the Movement Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="/delivery2.png" 
+            alt="" 
+            className="absolute top-10 left-10 w-32 h-32 object-contain"
+          />
+          <img 
+            src="/truck3.png" 
+            alt="" 
+            className="absolute bottom-10 right-10 w-32 h-32 object-contain"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
