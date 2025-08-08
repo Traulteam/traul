@@ -201,7 +201,7 @@ export default function FurnitureTransportVijayawada() {
               <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-tr from-orange-400 to-red-400 text-white mb-4">
                 <item.icon className="w-6 h-6" />
               </div>
-                             <p className="text-gray-700">{item.label}</p>
+              <p className="text-gray-700">{item.label}</p>
             </motion.div>
           ))}
         </div>
@@ -222,7 +222,7 @@ export default function FurnitureTransportVijayawada() {
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-400 to-red-400 hidden md:block transform -translate-x-1/2"></div>
-            
+
             {steps.map((step, idx) => (
               <motion.div
                 key={idx}
@@ -232,37 +232,41 @@ export default function FurnitureTransportVijayawada() {
                 custom={idx}
                 variants={fadeUp}
                 className={`relative flex items-center mb-16 last:mb-0 ${
-                  idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
                 {/* Timeline dot */}
                 <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-tr from-orange-500 to-red-500 text-white font-bold text-lg shadow-lg relative z-10 mx-auto md:mx-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
                   {idx + 1}
                 </div>
-                
-                                 {/* Content */}
-                 <div className={`mt-6 md:mt-0 md:w-5/12 ${
-                   idx % 2 === 0 ? 'md:ml-8' : 'md:mr-8'
-                 }`}>
-                   <div className="bg-gradient-to-br from-white via-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-                     {/* Decorative background element */}
-                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-200/30 to-red-200/30 rounded-full blur-xl"></div>
-                     
-                     {/* Step number badge */}
-                     <div className="inline-flex items-center justify-center w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-bold rounded-full mb-4 relative z-10">
-                       {idx + 1}
-                     </div>
-                     
-                     <h3 className="text-xl font-bold text-gray-900 mb-3 relative z-10">
-                       Step {idx + 1}
-                     </h3>
-                     <p className="text-gray-700 leading-relaxed text-lg relative z-10">{step}</p>
-                     
-                     {/* Bottom accent line */}
-                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-red-400"></div>
-                   </div>
-                 </div>
-                
+
+                {/* Content */}
+                <div
+                  className={`mt-6 md:mt-0 md:w-5/12 ${
+                    idx % 2 === 0 ? "md:ml-8" : "md:mr-8"
+                  }`}
+                >
+                  <div className="bg-gradient-to-br from-white via-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    {/* Decorative background element */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-200/30 to-red-200/30 rounded-full blur-xl"></div>
+
+                    {/* Step number badge */}
+                    <div className="inline-flex items-center justify-center w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-bold rounded-full mb-4 relative z-10">
+                      {idx + 1}
+                    </div>
+
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 relative z-10">
+                      Step {idx + 1}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-lg relative z-10">
+                      {step}
+                    </p>
+
+                    {/* Bottom accent line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-red-400"></div>
+                  </div>
+                </div>
+
                 {/* Connecting line for mobile */}
                 {idx < steps.length - 1 && (
                   <div className="absolute left-8 top-16 w-0.5 h-16 bg-gradient-to-b from-orange-400 to-red-400 md:hidden"></div>
@@ -274,7 +278,7 @@ export default function FurnitureTransportVijayawada() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-20 py-24 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-500 text-white text-center">
+      <section className="px-6 lg:px-20 py-24 bg-gradient-to-br from-orange-500 to-red-500 text-white text-center">
         <motion.h2
           initial="hidden"
           whileInView="visible"

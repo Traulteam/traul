@@ -22,6 +22,9 @@ function Header() {
          "/vijayawada/office-shifting",
      "/vijayawada/appliance-moving",
      "/vijayawada/furniture-transport",
+           "/vijayawada/house-shifting",
+      "/vijayawada/mini-truck-booking",
+      "/vijayawada/parcel-delivery",
   ].includes(location.pathname);
 
   const toggleMenu = useCallback(() => {
@@ -147,6 +150,27 @@ function Header() {
                  >
                    Furniture Transport Services
                  </Link>
+                                   <Link
+                    to="/vijayawada/house-shifting"
+                    onClick={() => setIsVijayawadaDropdownOpen(false)}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
+                  >
+                    House Shifting Services
+                  </Link>
+                                     <Link
+                     to="/vijayawada/mini-truck-booking"
+                     onClick={() => setIsVijayawadaDropdownOpen(false)}
+                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
+                   >
+                     Mini Truck Booking
+                   </Link>
+                   <Link
+                     to="/vijayawada/parcel-delivery"
+                     onClick={() => setIsVijayawadaDropdownOpen(false)}
+                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
+                   >
+                     Parcel Delivery Services
+                   </Link>
                </div>
              )}
           </div>
@@ -270,6 +294,36 @@ function Header() {
                  >
                    Furniture Transport Services
                  </Link>
+                                   <Link
+                    to="/vijayawada/house-shifting"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsVijayawadaDropdownOpen(false);
+                    }}
+                    className="block text-sm text-gray-600 hover:text-orange-600 transition-colors"
+                  >
+                    House Shifting Services
+                  </Link>
+                                     <Link
+                     to="/vijayawada/mini-truck-booking"
+                     onClick={() => {
+                       setIsMenuOpen(false);
+                       setIsVijayawadaDropdownOpen(false);
+                     }}
+                     className="block text-sm text-gray-600 hover:text-orange-600 transition-colors"
+                   >
+                     Mini Truck Booking
+                   </Link>
+                   <Link
+                     to="/vijayawada/parcel-delivery"
+                     onClick={() => {
+                       setIsMenuOpen(false);
+                       setIsVijayawadaDropdownOpen(false);
+                     }}
+                     className="block text-sm text-gray-600 hover:text-orange-600 transition-colors"
+                   >
+                     Parcel Delivery Services
+                   </Link>
                </div>
              )}
           </div>

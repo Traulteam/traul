@@ -15,6 +15,9 @@ import AppDownload from "./Pages/AppDownload";
 import OfficeShiftingVijayawada from "./Pages/OfficeShiftingVijayawada";
 import ApplianceMovingVijayawada from "./Pages/ApplianceMovingVijayawada";
 import FurnitureTransportVijayawada from "./Pages/FurnitureTransportVijayawada";
+import HouseShiftingVijayawada from "./Pages/HouseShiftingVijayawada";
+import MiniTruckBookingVijayawada from "./Pages/MiniTruckBookingVijayawada";
+import ParcelDeliveryVijayawada from "./Pages/ParcelDeliveryVijayawada";
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
           <Route path="/vijayawada/office-shifting" element={<OfficeShiftingVijayawada />} />
           <Route path="/vijayawada/appliance-moving" element={<ApplianceMovingVijayawada />} />
           <Route path="/vijayawada/furniture-transport" element={<FurnitureTransportVijayawada />} />
+                             <Route path="/vijayawada/house-shifting" element={<HouseShiftingVijayawada />} />
+                   <Route path="/vijayawada/mini-truck-booking" element={<MiniTruckBookingVijayawada />} />
+                   <Route path="/vijayawada/parcel-delivery" element={<ParcelDeliveryVijayawada />} />
         </Routes>
         <Footer />
       </BrowserRouter>

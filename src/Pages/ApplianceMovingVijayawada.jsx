@@ -320,7 +320,7 @@ export default function ApplianceMovingVijayawada() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-20 py-24 bg-gradient-to-tr from-orange-500 via-red-500 to-pink-500 text-white text-center">
+      <section className="px-6 lg:px-20 py-24 bg-gradient-to-br from-orange-500 to-red-500 text-white text-center">
         <motion.h2
           initial="hidden"
           whileInView="visible"
