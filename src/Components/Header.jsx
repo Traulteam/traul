@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import logo from "/logo-png.png";
 import { Link, useLocation } from "react-router";
+import { ChevronDown } from "lucide-react";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVijayawadaDropdownOpen, setIsVijayawadaDropdownOpen] = useState(false);
   const location = useLocation();
 
   // Check if current page is one of the policy pages that should have white background
@@ -17,6 +19,9 @@ function Header() {
     "/about-us",
     "/booking",
     "/download",
+         "/vijayawada/office-shifting",
+     "/vijayawada/appliance-moving",
+     "/vijayawada/furniture-transport",
   ].includes(location.pathname);
 
   const toggleMenu = useCallback(() => {
@@ -45,6 +50,7 @@ function Header() {
   // Close menu on route change
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsVijayawadaDropdownOpen(false);
   }, [location.pathname]);
 
   // Close menu on window resize (desktop view)
@@ -96,12 +102,54 @@ function Header() {
           >
             For Delivery
           </Link>
-          <Link
-            to="/booking"
-            className="hover:font-semibold text-sm lg:text-base text-black"
-          >
-            Booking
-          </Link>
+          
+          {/* Vijayawada Dropdown */}
+          <div className="relative">
+            <div className="flex items-center gap-1">
+              <Link
+                to="/booking"
+                className="hover:font-semibold text-sm lg:text-base text-black"
+              >
+                Vijayawada
+              </Link>
+              <button
+                onClick={() => setIsVijayawadaDropdownOpen(!isVijayawadaDropdownOpen)}
+                className="flex items-center justify-center w-4 h-4 hover:bg-gray-100 rounded transition-colors"
+              >
+                <ChevronDown 
+                  className={`w-4 h-4 transition-transform ${
+                    isVijayawadaDropdownOpen ? 'rotate-180' : ''
+                  }`} 
+                />
+              </button>
+            </div>
+            
+                         {isVijayawadaDropdownOpen && (
+               <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
+                                  <Link
+                    to="/vijayawada/office-shifting"
+                    onClick={() => setIsVijayawadaDropdownOpen(false)}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
+                  >
+                   Office Shifting Services
+                 </Link>
+                 <Link
+                   to="/vijayawada/appliance-moving"
+                   onClick={() => setIsVijayawadaDropdownOpen(false)}
+                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
+                 >
+                   Appliance Moving Services
+                 </Link>
+                 <Link
+                   to="/vijayawada/furniture-transport"
+                   onClick={() => setIsVijayawadaDropdownOpen(false)}
+                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-orange-600 transition-colors"
+                 >
+                   Furniture Transport Services
+                 </Link>
+               </div>
+             )}
+          </div>
         </nav>
 
         {/* Download Button */}
@@ -167,6 +215,65 @@ function Header() {
           >
             For Delivery
           </Link>
+          
+          {/* Mobile Vijayawada Dropdown */}
+          <div>
+            <div className="flex items-center gap-1">
+              <Link
+                to="/booking"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm"
+              >
+                Vijayawada
+              </Link>
+              <button
+                onClick={() => setIsVijayawadaDropdownOpen(!isVijayawadaDropdownOpen)}
+                className="flex items-center justify-center w-4 h-4 hover:bg-gray-100 rounded transition-colors"
+              >
+                <ChevronDown 
+                  className={`w-4 h-4 transition-transform ${
+                    isVijayawadaDropdownOpen ? 'rotate-180' : ''
+                  }`} 
+                />
+              </button>
+            </div>
+            
+                         {isVijayawadaDropdownOpen && (
+               <div className="mt-2 ml-4 space-y-2">
+                                  <Link
+                    to="/vijayawada/office-shifting"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsVijayawadaDropdownOpen(false);
+                    }}
+                    className="block text-sm text-gray-600 hover:text-orange-600 transition-colors"
+                  >
+                   Office Shifting Services
+                 </Link>
+                 <Link
+                   to="/vijayawada/appliance-moving"
+                   onClick={() => {
+                     setIsMenuOpen(false);
+                     setIsVijayawadaDropdownOpen(false);
+                   }}
+                   className="block text-sm text-gray-600 hover:text-orange-600 transition-colors"
+                 >
+                   Appliance Moving Services
+                 </Link>
+                 <Link
+                   to="/vijayawada/furniture-transport"
+                   onClick={() => {
+                     setIsMenuOpen(false);
+                     setIsVijayawadaDropdownOpen(false);
+                   }}
+                   className="block text-sm text-gray-600 hover:text-orange-600 transition-colors"
+                 >
+                   Furniture Transport Services
+                 </Link>
+               </div>
+             )}
+          </div>
+          
           <Link
             to="/download"
             onClick={() => setIsMenuOpen(false)}

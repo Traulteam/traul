@@ -12,6 +12,9 @@ import Disclaimer from "./Pages/Disclaimer";
 import About from "./Pages/About";
 import VijayawadaBookingPage from "./Pages/VijayawadaBookingPage";
 import AppDownload from "./Pages/AppDownload";
+import OfficeShiftingVijayawada from "./Pages/OfficeShiftingVijayawada";
+import ApplianceMovingVijayawada from "./Pages/ApplianceMovingVijayawada";
+import FurnitureTransportVijayawada from "./Pages/FurnitureTransportVijayawada";
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
           <Route path="/about-us" element={<About />} />
           <Route path="/booking" element={<VijayawadaBookingPage />} />
           <Route path="/download" element={<AppDownload />} />
+          <Route path="/vijayawada/office-shifting" element={<OfficeShiftingVijayawada />} />
+          <Route path="/vijayawada/appliance-moving" element={<ApplianceMovingVijayawada />} />
+          <Route path="/vijayawada/furniture-transport" element={<FurnitureTransportVijayawada />} />
         </Routes>
         <Footer />
       </BrowserRouter>
