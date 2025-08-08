@@ -54,10 +54,10 @@ export default function AboutContent() {
           className="relative z-10 text-center text-white px-4 sm:px-6 md:px-8"
         >
           <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-orange-500/20 backdrop-blur-sm rounded-full text-orange-300 font-medium text-xs sm:text-sm mb-4 sm:mb-6">
-            Welcome to Traul
+            Our Story
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            About <span className="text-orange-400">Traul</span>
+            Transforming <span className="text-orange-400">Logistics</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-gray-200">
             Building a smarter way to move goods in Vijayawada and beyond
@@ -104,14 +104,14 @@ export default function AboutContent() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/delivery.jpg" 
-                  alt="Traul delivery service" 
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
+                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                 <img 
+                   src="/Delivery1.png" 
+                   alt="Traul delivery service" 
+                   className="w-full h-auto object-cover"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+               </div>
                              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
                  <Truck className="w-8 h-8 text-orange-500" />
                </div>
@@ -222,11 +222,11 @@ export default function AboutContent() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <img 
-                src="/hero1.png" 
-                alt="Traul vision" 
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
+                             <img 
+                 src="/Delivery3.png" 
+                 alt="Traul vision" 
+                 className="w-full h-auto rounded-2xl shadow-2xl"
+               />
                              <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4">
                  <Package className="w-8 h-8 text-orange-500" />
                </div>
@@ -289,11 +289,11 @@ export default function AboutContent() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <img 
-                src="/hero2.png" 
-                alt="Vijayawada city" 
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
+                             <img 
+                 src="/Delivery4.png" 
+                 alt="Vijayawada city" 
+                 className="w-full h-auto rounded-2xl shadow-2xl"
+               />
                              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
                  <MapPin className="w-8 h-8 text-orange-500" />
                </div>

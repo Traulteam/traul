@@ -165,14 +165,14 @@ export default function AppDownload() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/delivery2.png" 
-                  alt="Traul delivery service" 
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
+                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                 <img 
+                   src="/Delivery5.png" 
+                   alt="Traul delivery service" 
+                   className="w-full h-auto object-cover"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+               </div>
                              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
                  <Smartphone className="w-8 h-8 text-orange-500" />
                </div>
@@ -359,14 +359,14 @@ export default function AppDownload() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/hero1.png" 
-                  alt="Traul app interface" 
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
+                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                 <img 
+                   src="/Delivery3.png" 
+                   alt="Traul app interface" 
+                   className="w-full h-auto object-cover"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+               </div>
                              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
                  <Download className="w-8 h-8 text-orange-500" />
                </div>
