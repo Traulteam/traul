@@ -218,10 +218,43 @@ export default function FurnitureTransportVijayawada() {
         >
           Booking Process Timeline
         </motion.h2>
-        <div className="max-w-6xl mx-auto">
+        
+        {/* Mobile: Cards in grid */}
+        <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {steps.map((step, idx) => (
+            <motion.div
+              key={idx}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={idx}
+              variants={fadeUp}
+              className="bg-gradient-to-br from-white via-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+            >
+              {/* Decorative background element */}
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-200/30 to-red-200/30 rounded-full blur-xl"></div>
+              
+              {/* Step number badge */}
+              <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-bold rounded-full mb-4 relative z-10">
+                {idx + 1}
+              </div>
+              
+              <h3 className="text-lg font-bold text-gray-900 mb-3 relative z-10">
+                Step {idx + 1}
+              </h3>
+              <p className="text-gray-700 leading-relaxed relative z-10">{step}</p>
+              
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-4 right-4 h-1 bg-gradient-to-r from-orange-400 to-red-400 rounded-full"></div>
+            </motion.div>
+          ))}
+        </div>
+        
+        {/* Desktop: Original Timeline */}
+        <div className="hidden md:block max-w-6xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-400 to-red-400 hidden md:block transform -translate-x-1/2"></div>
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-400 to-red-400 transform -translate-x-1/2"></div>
 
             {steps.map((step, idx) => (
               <motion.div
@@ -232,18 +265,18 @@ export default function FurnitureTransportVijayawada() {
                 custom={idx}
                 variants={fadeUp}
                 className={`relative flex items-center mb-16 last:mb-0 ${
-                  idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  idx % 2 === 0 ? "flex-row" : "flex-row-reverse"
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-tr from-orange-500 to-red-500 text-white font-bold text-lg shadow-lg relative z-10 mx-auto md:mx-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
+                <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-tr from-orange-500 to-red-500 text-white font-bold text-lg shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10">
                   {idx + 1}
                 </div>
 
                 {/* Content */}
                 <div
-                  className={`mt-6 md:mt-0 md:w-5/12 ${
-                    idx % 2 === 0 ? "md:ml-8" : "md:mr-8"
+                  className={`md:w-5/12 ${
+                    idx % 2 === 0 ? "md:mr-8" : "md:ml-8"
                   }`}
                 >
                   <div className="bg-gradient-to-br from-white via-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
@@ -263,14 +296,9 @@ export default function FurnitureTransportVijayawada() {
                     </p>
 
                     {/* Bottom accent line */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-red-400"></div>
+                    <div className="absolute bottom-0 left-4 right-4 h-1 bg-gradient-to-r from-orange-400 to-red-400 rounded-full"></div>
                   </div>
                 </div>
-
-                {/* Connecting line for mobile */}
-                {idx < steps.length - 1 && (
-                  <div className="absolute left-8 top-16 w-0.5 h-16 bg-gradient-to-b from-orange-400 to-red-400 md:hidden"></div>
-                )}
               </motion.div>
             ))}
           </div>
