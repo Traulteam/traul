@@ -135,7 +135,7 @@ export default function AppDownload() {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-gradient-to-br from-gray-50 to-orange-50">
+      {/* <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-gradient-to-br from-gray-50 to-orange-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -182,7 +182,7 @@ export default function AppDownload() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Traul Section */}
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-black">
@@ -396,31 +396,24 @@ export default function AppDownload() {
             </p>
           </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-2xl mx-auto">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-semibold text-lg sm:text-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3 w-full sm:w-auto"
-            >
-              <PlayStoreLogo className="w-6 h-6 sm:w-8 sm:h-8" />
-              <div className="text-left">
-                <div className="text-xs text-orange-200">GET IT ON</div>
-                <div className="text-base sm:text-lg font-bold">Google Play</div>
-              </div>
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-semibold text-lg sm:text-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-3 w-full sm:w-auto"
-            >
-              <AppStoreLogo className="w-6 h-6 sm:w-8 sm:h-8" />
-              <div className="text-left">
-                <div className="text-xs text-orange-200">Download on the</div>
-                <div className="text-base sm:text-lg font-bold">App Store</div>
-              </div>
-            </motion.button>
-          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 w-full sm:w-auto"
+              >
+                <PlayStoreLogo className="w-5 h-5 sm:w-6 sm:h-6" />
+                Google Play
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
+              >
+                <AppStoreLogo className="w-5 h-5 sm:w-6 sm:h-6" />
+                App Store
+              </motion.button>
+            </div>
         </div>
       </section>
     </div>

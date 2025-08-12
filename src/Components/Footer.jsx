@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router";
-// import { Link } from "react-router";
 const Footer = () => {
   const socialLinks = [
     {
@@ -130,36 +129,36 @@ const Footer = () => {
             <div className="space-y-6">
               <h3 className="text-lg font-semibold text-white">Services</h3>
               <div className="space-y-4">
-                <a
-                  href="#"
+                <Link
+                  to="/booking#vehicle-options"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
                   2-Wheeler Delivery
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/booking#vehicle-options"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
                   Mini Truck Transport
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/booking#vehicle-options"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
                   Local Delivery
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/booking#vehicle-options"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
                   Outstation Transport
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/booking#vehicle-options"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
                   Scheduled Bookings
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -167,7 +166,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold text-white">Company</h3>
               <div className="space-y-4">
                 <a
-                  href="#"
+                  href="/about-us"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
                   About Us

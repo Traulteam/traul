@@ -46,24 +46,16 @@ export default function AboutContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-orange-100 rounded-full text-orange-700 font-medium text-xs sm:text-sm mb-4 sm:mb-6">
-                Our Journey
-              </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 px-2">
                 About <span className="text-orange-500">Traul</span>
               </h2>
               <div className="space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
                 <p>
-                  At Traul, we're building a smarter way to move goods—starting with the vibrant city of Vijayawada.
-                </p>
-                <p>
-                  Every day, shopkeepers, households, and traders struggle to find reliable mini truck or tempo services. Prices fluctuate, drivers are hard to reach, and delays are common. We knew there had to be a better way.
-                </p>
-                <p>
-                  So we created <span className="font-semibold text-orange-500">Traul</span> — a mobile-first logistics platform that lets you book 2-wheelers or mini trucks instantly, with transparent pricing, live tracking, and local driver-partners who understand your routes.
+                  Traul is transforming how India moves — starting with Vijayawada. Whether you're a shopkeeper fulfilling customer orders, a household shifting appliances, or a trader moving stock between godowns — Traul brings convenience, speed, and transparency to your fingertips.
                 </p>
                 <p className="text-lg sm:text-xl font-medium text-gray-800">
-                  We're not just moving goods. We're moving the entire logistics experience forward — one delivery at a time.
+                  No more calling random drivers. No more price guessing. No more waiting without updates.<br className="hidden sm:block" />
+                  Just book, track, and deliver — all within one seamless app.
                 </p>
               </div>
             </motion.div>
@@ -77,13 +69,16 @@ export default function AboutContent() {
             >
                              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                  <img 
-                   src="/Delivery1.png" 
+                   src="/Delivery5.png" 
                    alt="Traul delivery service" 
                    className="w-full h-auto object-cover"
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                </div>
                              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
+                 <Smartphone className="w-8 h-8 text-orange-500" />
+               </div>
+               <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4">
                  <Truck className="w-8 h-8 text-orange-500" />
                </div>
             </motion.div>

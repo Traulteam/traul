@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router";
 import { motion } from "framer-motion";
 import {
   Truck,
@@ -19,6 +20,7 @@ import {
 } from "lucide-react";
 
 function VijayawadaBookingPage() {
+  const location = useLocation();
   const heroRef = useRef(null);
   const sectionsRef = useRef([]);
 
@@ -68,6 +70,18 @@ function VijayawadaBookingPage() {
       document.head.removeChild(style);
     };
   }, []);
+
+  // Handle anchor link scrolling when hash changes
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+    }
+  }, [location.hash]);
 
   const addToRefs = (el) => {
     if (el && !sectionsRef.current.includes(el)) {
@@ -271,6 +285,7 @@ function VijayawadaBookingPage() {
 
       {/* Vehicle Options */}
       <section
+        id="vehicle-options"
         ref={addToRefs}
         className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-black"
       >
