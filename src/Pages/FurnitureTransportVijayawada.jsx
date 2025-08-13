@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import { motion } from "framer-motion";
 import {
   Truck,
@@ -327,13 +328,17 @@ export default function FurnitureTransportVijayawada() {
           Avoid the headache of moving furniture yourself. Let Traul handle it
           with professional care and city-wide coverage.
         </motion.p>
-        <motion.button
+        <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
-          className="px-8 py-3 rounded-full bg-white text-orange-600 font-semibold shadow-lg"
         >
-          Book Now
-        </motion.button>
+          <Link
+            to="/contact-us"
+            className="px-8 py-3 rounded-full bg-white text-orange-600 font-semibold shadow-lg inline-block"
+          >
+            Book Now
+          </Link>
+        </motion.div>
       </section>
     </div>
   );

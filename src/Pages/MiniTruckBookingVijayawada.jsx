@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Truck,
@@ -442,9 +443,12 @@ export default function MiniTruckBookingVijayawada() {
               <p className="text-gray-300 text-lg leading-relaxed">
                 Have More Questions About Mini Truck Services?
               </p>
-                             <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25">
+                             <Link
+                to="/contact-us"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25"
+              >
                  Contact Us
-               </button>
+               </Link>
             </div>
 
             {/* Right Side - FAQ Items */}
@@ -545,13 +549,17 @@ export default function MiniTruckBookingVijayawada() {
         >
           Move goods across Vijayawada with ease. Book a mini truck on Traul today and get started in minutes.
         </motion.p>
-        <motion.button
+        <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
-                     className="px-8 py-3 rounded-full bg-white text-orange-600 font-semibold shadow-lg"
         >
-          Book Now
-        </motion.button>
+          <Link
+            to="/contact-us"
+            className="px-8 py-3 rounded-full bg-white text-orange-600 font-semibold shadow-lg inline-block"
+          >
+            Book Now
+          </Link>
+        </motion.div>
       </section>
     </div>
   );

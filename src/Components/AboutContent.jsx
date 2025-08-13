@@ -297,16 +297,7 @@ export default function AboutContent() {
       {/* Join the Movement Section */}
       <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-black relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img 
-            src="/delivery2.png" 
-            alt="" 
-            className="absolute top-10 left-10 w-32 h-32 object-contain"
-          />
-          <img 
-            src="/truck3.png" 
-            alt="" 
-            className="absolute bottom-10 right-10 w-32 h-32 object-contain"
-          />
+        
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div

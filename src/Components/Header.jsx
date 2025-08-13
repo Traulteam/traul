@@ -79,7 +79,7 @@ function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full ${headerBg} transition-all duration-300`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 flex items-center justify-between">
+             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-5 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" onClick={handleLogoClick}>
           <img src={logo} alt="Traul Logo" className="w-20" />
@@ -93,18 +93,15 @@ function Header() {
           >
             About Us
           </Link>
-          <Link
-            to="/contact-us"
+          
+          <a
+            href="https://blog.traul.in/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:font-semibold text-sm lg:text-base text-black"
           >
-            For Enterprise
-          </Link>
-          <Link
-            to="/contact-us"
-            className="hover:font-semibold text-sm lg:text-base text-black"
-          >
-            For Delivery
-          </Link>
+            Blogs
+          </a>
           
           <Link
             to="/booking"
@@ -183,13 +180,19 @@ function Header() {
           </div>
         </nav>
 
-        {/* Download Button */}
-        <div className="hidden md:block">
+        {/* Download and Contact Buttons */}
+        <div className="hidden md:flex items-center gap-3">
           <Link
             to="/download"
             className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 text-sm lg:text-base transition-colors duration-200"
           >
             Download App
+          </Link>
+          <Link
+            to="/contact-us"
+            className="border border-black text-black px-4 py-2 rounded-md hover:bg-black hover:text-white text-sm lg:text-base transition-colors duration-200"
+          >
+            Contact Us
           </Link>
         </div>
 
@@ -232,20 +235,16 @@ function Header() {
           >
             About Us
           </Link>
-          <Link
-            to="/contact-us"
-            onClick={() => setIsMenuOpen(false)}
+          
+          <a
+            href="https://blog.traul.in/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm"
-          >
-            For Enterprise
-          </Link>
-          <Link
-            to="/contact-us"
             onClick={() => setIsMenuOpen(false)}
-            className="text-sm"
           >
-            For Delivery
-          </Link>
+            Blogs
+          </a>
           
           <Link
             to="/booking"
@@ -339,13 +338,22 @@ function Header() {
             )}
           </div>
           
-          <Link
-            to="/download"
-            onClick={() => setIsMenuOpen(false)}
-            className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 text-sm w-fit transition-colors duration-200"
-          >
-            Download App
-          </Link>
+          <div className="flex flex-col gap-3">
+            <Link
+              to="/contact-us"
+              onClick={() => setIsMenuOpen(false)}
+              className="border border-black text-black px-4 py-2 rounded hover:bg-black hover:text-white text-sm w-fit transition-colors duration-200 text-center"
+            >
+              Contact Us
+            </Link>
+            <Link
+              to="/download"
+              onClick={() => setIsMenuOpen(false)}
+              className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 text-sm w-fit transition-colors duration-200 text-center"
+            >
+              Download App
+            </Link>
+          </div>
         </nav>
       </div>
     </header>
