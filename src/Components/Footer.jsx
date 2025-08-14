@@ -219,9 +219,14 @@ const Footer = () => {
               © 2025 Traul. All rights reserved. Redefining Last-Mile Logistics
               for Bharat.
             </p>
-            <p className="text-gray-500 text-xs">
-              Made by SoftexEdge
-            </p>
+                         <a
+               href="https://softexedge.in/"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="text-gray-500 text-xs hover:text-orange-400 transition-colors"
+             >
+               Made by SoftExEdge
+             </a>
             <nav className="flex items-center gap-6">
               {legalLinks.map((link) => (
                 <Link
