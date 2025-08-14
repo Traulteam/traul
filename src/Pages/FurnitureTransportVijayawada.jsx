@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 import {
@@ -29,6 +29,10 @@ const fadeUp = {
 };
 
 export default function FurnitureTransportVijayawada() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const features = [
     {
       icon: Sofa,

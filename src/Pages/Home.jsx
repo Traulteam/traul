@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ScrollingBanner from "../Components/Home/ScrollingBanner";
 import DeliveryLogistics from "../Components/Home/DeliveryLogistics";
 import VehiclesShowCase from "../Components/Home/VehiclesShowCase";
@@ -7,6 +7,10 @@ import HeroSection from "../Components/HeroSection";
 import FAQ from "../Components/FAQ";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="">
       <HeroSection />

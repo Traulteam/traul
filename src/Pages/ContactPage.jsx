@@ -172,6 +172,7 @@ const ContactPage = () => {
       content:
         "Flat no: 406\nPoojitha Waterfront Apartments\nKunchanapalli, India,52250",
       action: "Get Directions",
+      onClick: () => window.open("https://maps.app.goo.gl/kavaRCG7KHagRwcn9?g_st=com.google.maps.preview.copy", "_blank"),
     },
     {
       icon: (
@@ -182,6 +183,7 @@ const ContactPage = () => {
       title: "Call Us",
       content: "+91 9646443444\nMon-Fri 9AM-6PM EST",
       action: "Call Now",
+      onClick: () => window.open("tel:+919646443444", "_blank"),
     },
   ];
 
@@ -429,7 +431,10 @@ const ContactPage = () => {
               <p className="text-gray-300 mb-6 whitespace-pre-line leading-relaxed">
                 {info.content}
               </p>
-              <button className="text-orange-400 hover:text-orange-300 font-medium transition-colors group-hover:underline">
+              <button 
+                onClick={info.onClick} 
+                className="text-orange-400 hover:text-orange-300 font-medium transition-colors group-hover:underline"
+              >
                 {info.action} →
               </button>
             </div>

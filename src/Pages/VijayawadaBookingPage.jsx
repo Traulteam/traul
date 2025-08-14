@@ -93,19 +93,19 @@ function VijayawadaBookingPage() {
 
   const vehicles = [
     {
-      name: "2-Wheeler & Mini Truck",
+      name: "2-Wheeler",
       capacity: "up to ~800 kg",
       price: "₹200+",
       ideal: "Fast deliveries and medium loads",
-      icon: "🛵",
-      description: "Book 2-wheeler & mini truck in seconds. Fast, affordable, and trackable delivery services across Vijayawada and beyond.",
+      icon: "/2-wheeler.png",
+      description: "Book 2-wheeler in seconds. Fast, affordable, and trackable delivery services across Vijayawada and beyond.",
     },
     {
       name: "Three-Wheeler",
       capacity: "up to ~500 kg",
       price: "₹150+",
       ideal: "Market runs and small loads",
-      icon: "🛺",
+      icon: "/3-wheeler.png",
       description: "Perfect for fast, city-wide deliveries of lightweight items. Ideal for businesses needing quick dispatch of parcels.",
     },
     {
@@ -113,7 +113,7 @@ function VijayawadaBookingPage() {
       capacity: "700-800 kg",
       price: "₹270+",
       ideal: "Medium consignments",
-      icon: "🚚",
+      icon: "/mini-truck.png",
       description: "Reliable and spacious enough for moderate loads. Perfect for shops, construction sites, and home shifting needs.",
     },
     {
@@ -121,7 +121,7 @@ function VijayawadaBookingPage() {
       capacity: "up to ~1.25 tonnes",
       price: "₹320+",
       ideal: "Household items, small office moves",
-      icon: "🚛",
+      icon: "/8ft.png",
       description: "A strong and versatile choice for heavier deliveries. Ideal for B2B, hardware dealers, or shifting large loads.",
     },
     {
@@ -129,7 +129,7 @@ function VijayawadaBookingPage() {
       capacity: "2-3 tonnes",
       price: "₹550+",
       ideal: "Bulkier goods and heavier loads",
-      icon: "🚚",
+      icon: "/9ft.png",
       description: "Traul's biggest carrier, ideal for large and heavy shipments over longer distances. Used by wholesalers and manufacturers.",
     },
   ];
@@ -265,10 +265,7 @@ function VijayawadaBookingPage() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-8 px-4">
-              Moving goods around Vijayawada shouldn't be a headache. With Traul,
-              you can book a mini truck or tempo in a couple of taps and get your
-              delivery sorted—whether you're a shop owner in Governorpet or a
-              household shifting furniture across town.
+              Book 2-wheeler & mini truck in seconds. Fast, affordable, and trackable delivery services across Vijayawada and beyond.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
@@ -332,7 +329,11 @@ function VijayawadaBookingPage() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
                   <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center sm:justify-start">
-                    {vehicle.icon}
+                    {vehicle.icon.startsWith('/') ? (
+                      <img src={vehicle.icon} alt={vehicle.name} className="w-16 h-16 sm:w-20 sm:h-20 object-contain" />
+                    ) : (
+                      <span>{vehicle.icon}</span>
+                    )}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">{vehicle.name}</h3>

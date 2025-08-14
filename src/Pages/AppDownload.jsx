@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
   Download, 
@@ -79,6 +79,25 @@ const itemVariants = {
 };
 
 export default function AppDownload() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      const scrollThreshold = 100; // Adjust as needed
+      if (scrollTop > scrollThreshold) {
+        document.body.classList.add('show-scroll');
+      } else {
+        document.body.classList.remove('show-scroll');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}

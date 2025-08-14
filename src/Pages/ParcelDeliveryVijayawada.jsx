@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -26,6 +26,10 @@ const fadeUp = {
 };
 
 export default function ParcelDeliveryVijayawada() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [openIndex, setOpenIndex] = useState(null);
 
   const features = [

@@ -1,26 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  Monitor,
+  Building2,
   Truck,
+  Box,
   Clock,
+  MapPin,
   Smartphone,
   FileText,
-  Boxes,
-  Armchair,
-  Printer,
-  Folder,
-  LayoutGrid,
-  Users,
+  Home,
   Briefcase,
-  Building2,
-  Stethoscope,
-  User,
-  MapPin,
+  Computer,
+  Printer,
+  Armchair,
+  Table,
+  Luggage,
+  ArrowRight,
 } from "lucide-react";
 
 export default function OfficeShiftingVijayawada() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const features = [
     {
       icon: Monitor,

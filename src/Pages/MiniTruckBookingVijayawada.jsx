@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Truck,
+  Box,
   Clock,
-  DollarSign,
   MapPin,
-  Package,
   Smartphone,
   FileText,
-  Building,
   Home,
+  Building2,
   ShoppingBag,
-  Calendar,
-  Users,
-  CheckCircle,
+  Package,
+  Utensils,
+  Luggage,
   ArrowRight,
 } from "lucide-react";
 
@@ -28,6 +27,10 @@ const fadeUp = {
 };
 
 export default function MiniTruckBookingVijayawada() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [openIndex, setOpenIndex] = useState(null);
 
   const features = [

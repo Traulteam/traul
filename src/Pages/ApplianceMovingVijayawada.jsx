@@ -1,24 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
+  Wrench,
   Truck,
-  Package,
+  Box,
   Clock,
+  MapPin,
   Smartphone,
   FileText,
-  Shield,
-  Tv,
+  Home,
   Refrigerator,
   WashingMachine,
-  AirVent,
-  Microwave,
-  Disc,
-  Battery,
-  Gift,
-  Home,
-  Store,
-  Wrench,
+  Tv,
+  Utensils,
+  Luggage,
+  ArrowRight,
 } from "lucide-react";
 
 const fadeUp = {
@@ -31,6 +28,10 @@ const fadeUp = {
 };
 
 export default function ApplianceMovingVijayawada() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const features = [
     {
       icon: Shield,
