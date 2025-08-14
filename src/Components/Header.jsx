@@ -94,14 +94,7 @@ function Header() {
             About Us
           </Link>
           
-          <a
-            href="https://blog.traul.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:font-semibold text-sm lg:text-base text-black"
-          >
-            Blogs
-          </a>
+
           
           <Link
             to="/booking"
@@ -236,15 +229,7 @@ function Header() {
             About Us
           </Link>
           
-          <a
-            href="https://blog.traul.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Blogs
-          </a>
+
           
           <Link
             to="/booking"

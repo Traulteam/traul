@@ -19,6 +19,8 @@ import {
   Train,
 } from "lucide-react";
 
+import bike from '/bik-01.svg'
+
 function VijayawadaBookingPage() {
   const location = useLocation();
   const heroRef = useRef(null);
@@ -90,6 +92,14 @@ function VijayawadaBookingPage() {
   };
 
   const vehicles = [
+    {
+      name: "2-Wheeler & Mini Truck",
+      capacity: "up to ~800 kg",
+      price: "₹200+",
+      ideal: "Fast deliveries and medium loads",
+      icon: "🛵",
+      description: "Book 2-wheeler & mini truck in seconds. Fast, affordable, and trackable delivery services across Vijayawada and beyond.",
+    },
     {
       name: "Three-Wheeler",
       capacity: "up to ~500 kg",
@@ -604,22 +614,30 @@ function VijayawadaBookingPage() {
               simple and reliable.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-              <motion.button 
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 w-full sm:w-auto"
               >
-                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                Download Traul App
-              </motion.button>
-              <motion.button 
+                <Link
+                  to="/download"
+                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 w-full sm:w-auto"
+                >
+                  <Download className="w-4 h-4 sm:w-5 sm:w-5" />
+                  Download Traul App
+                </Link>
+              </motion.div>
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
               >
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-                Call Now
-              </motion.button>
+                <Link
+                  to="/contact-us"
+                  className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
+                >
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                  Call Now
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </div>

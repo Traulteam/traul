@@ -113,22 +113,28 @@ export default function AppDownload() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-              <motion.button
+              <motion.a
+                href="https://play.google.com/store/apps/details?id=com.Traul.tookanCustomer"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 w-full sm:w-auto"
               >
                 <PlayStoreLogo className="w-5 h-5 sm:w-6 sm:h-6" />
                 Google Play
-              </motion.button>
-              <motion.button
+              </motion.a>
+              <motion.a
+                href="https://apps.apple.com/in/app/traul-driver/id6744351369"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
               >
                 <AppStoreLogo className="w-5 h-5 sm:w-6 sm:h-6" />
                 App Store
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -397,22 +403,28 @@ export default function AppDownload() {
           </motion.div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-              <motion.button
+              <motion.a
+                href="https://play.google.com/store/apps/details?id=com.Traul.tookanCustomer"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 w-full sm:w-auto"
               >
                 <PlayStoreLogo className="w-5 h-5 sm:w-6 sm:h-6" />
                 Google Play
-              </motion.button>
-              <motion.button
+              </motion.a>
+              <motion.a
+                href="https://apps.apple.com/in/app/traul-driver/id6744351369"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
               >
                 <AppStoreLogo className="w-5 h-5 sm:w-6 sm:h-6" />
                 App Store
-              </motion.button>
+              </motion.a>
             </div>
         </div>
       </section>

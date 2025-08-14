@@ -36,7 +36,12 @@ const MobileTrackingSection = () => {
                 </div>
 
                 {/* Android Download Button */}
-                <button className="group bg-gray-900 text-white px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-medium flex items-center justify-center gap-1 sm:gap-2 md:gap-3 hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm md:text-base w-full max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] xl:max-w-none">
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.Traul.tookanCustomer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-gray-900 text-white px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-medium flex items-center justify-center gap-1 sm:gap-2 md:gap-3 hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm md:text-base w-full max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] xl:max-w-none"
+                >
                   <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 bg-green-500 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 text-white"
@@ -54,7 +59,7 @@ const MobileTrackingSection = () => {
                       Google Play
                     </div>
                   </div>
-                </button>
+                </a>
               </div>
 
               {/* iPhone */}
@@ -77,7 +82,12 @@ const MobileTrackingSection = () => {
                 </div>
 
                 {/* iOS Download Button */}
-                <button className="group bg-gradient-to-r from-blue-600 to-blue-800 text-white px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-medium flex items-center justify-center gap-1 sm:gap-2 md:gap-3 hover:from-blue-700 hover:to-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm md:text-base w-full max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] xl:max-w-none">
+                <a 
+                  href="https://apps.apple.com/in/app/traul-driver/id6744351369"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-gradient-to-r from-blue-600 to-blue-800 text-white px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-medium flex items-center justify-center gap-1 sm:gap-2 md:gap-3 hover:from-blue-700 hover:to-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm md:text-base w-full max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] xl:max-w-none"
+                >
                   <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 bg-white/20 rounded-md sm:rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 lg:w-4 lg:h-4 xl:w-5 xl:h-5 text-white"
@@ -95,7 +105,7 @@ const MobileTrackingSection = () => {
                       App Store
                     </div>
                   </div>
-                </button>
+                </a>
               </div>
             </div>
           </div>

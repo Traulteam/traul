@@ -281,55 +281,21 @@ export default function HouseShiftingVijayawada() {
         </div>
       </section>
 
-      {/* Booking Steps Timeline */}
+      {/* Booking Steps Process */}
       <section className="px-6 lg:px-20 py-20 bg-white">
         <motion.h2
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="text-3xl sm:text-4xl font-bold mb-10 text-center"
+          className="text-3xl sm:text-4xl font-bold mb-16 text-center"
         >
           How to Book House Shifting
         </motion.h2>
         
-        {/* Mobile: Cards in grid */}
-        <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
-          {steps.map((step, idx) => (
-            <motion.div
-              key={idx}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={idx}
-              variants={fadeUp}
-              className="bg-gradient-to-br from-white via-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
-            >
-              {/* Decorative background element */}
-              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-200/30 to-red-200/30 rounded-full blur-xl"></div>
-              
-              {/* Step number badge */}
-              <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-bold rounded-full mb-4 relative z-10">
-                {idx + 1}
-              </div>
-              
-              <h3 className="text-lg font-bold text-gray-900 mb-3 relative z-10">
-                Step {idx + 1}
-              </h3>
-              <p className="text-gray-700 leading-relaxed relative z-10">{step}</p>
-              
-              {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-4 right-4 h-1 bg-gradient-to-r from-orange-400 to-red-400 rounded-full"></div>
-            </motion.div>
-          ))}
-        </div>
-        
-        {/* Desktop: Original Timeline */}
-        <div className="hidden md:block max-w-6xl mx-auto">
-          <div className="relative">
-            {/* Central Timeline Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-400 to-red-400 transform -translate-x-1/2"></div>
-
+        {/* Process Steps Grid */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {steps.map((step, idx) => (
               <motion.div
                 key={idx}
@@ -338,39 +304,35 @@ export default function HouseShiftingVijayawada() {
                 viewport={{ once: true }}
                 custom={idx}
                 variants={fadeUp}
-                className={`relative flex items-center mb-16 last:mb-0 ${
-                  idx % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                }`}
+                className="group"
               >
-                {/* Timeline Dot */}
-                <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-tr from-orange-500 to-red-500 text-white font-bold text-lg shadow-lg absolute left-1/2 transform -translate-x-1/2 z-10">
-                  {idx + 1}
-                </div>
-
-                {/* Content Card */}
-                <div
-                  className={`relative bg-gradient-to-br from-white via-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 md:w-5/12 ${
-                    idx % 2 === 0 ? "md:mr-8" : "md:ml-8"
-                  }`}
-                >
-                  {/* Decorative Background Element */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-200/30 to-red-200/30 rounded-full blur-xl"></div>
-
-                  {/* Step Number Badge */}
-                  <div className="inline-flex items-center justify-center w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-bold rounded-full mb-4 relative z-10">
-                    {idx + 1}
+                {/* Step Card */}
+                <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
+                  {/* Step Number Badge and Icon Container */}
+                  <div className="flex items-center gap-4 mb-6">
+                    {/* Step Number Badge */}
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 text-white text-lg font-bold rounded-full group-hover:scale-105 transition-transform duration-300">
+                      {idx + 1}
+                    </div>
+                    
+                    {/* Step Icon */}
+                    <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-orange-100 to-red-100 text-orange-600 rounded-lg">
+                      <Clock className="w-5 h-5" />
+                    </div>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 relative z-10">
-                    Step {idx + 1}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed text-lg relative z-10">
-                    {step}
-                  </p>
-
-                  {/* Bottom Accent Line */}
-                  <div className="absolute bottom-0 left-4 right-4 h-1 bg-gradient-to-r from-orange-400 to-red-400 rounded-full"></div>
+                  
+                  {/* Step Content */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
+                      Step {idx + 1}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {step}
+                    </p>
+                  </div>
+                  
+                  {/* Subtle accent line */}
+                  <div className="mt-4 pt-3 border-t border-gray-100 group-hover:border-orange-200 transition-colors duration-300"></div>
                 </div>
               </motion.div>
             ))}

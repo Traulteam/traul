@@ -172,6 +172,14 @@ const Footer = () => {
                   About Us
                 </a>
                 <a
+                  href="https://blog.traul.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  Blog
+                </a>
+                <a
                   href="#"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >

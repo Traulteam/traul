@@ -3,7 +3,23 @@ import React, { useEffect, useState } from "react";
 const ContactPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Preload EmailJS for better performance
+    if (!window.emailjs) {
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
+      script.async = true;
+      script.onload = () => {
+        // Initialize EmailJS once the script is loaded
+        window.emailjs.init("BRfh47i2hK2ZXCmjO");
+      };
+      document.head.appendChild(script);
+    } else {
+      // If EmailJS is already loaded, initialize it
+      window.emailjs.init("BRfh47i2hK2ZXCmjO");
+    }
   }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,6 +29,32 @@ const ContactPage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+    
+    if (!formData.subject) {
+      newErrors.subject = "Please select a subject";
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,10 +62,23 @@ const ContactPage = () => {
       ...prev,
       [name]: value,
     }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ""
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus(null);
 
@@ -33,53 +88,75 @@ const ContactPage = () => {
       const templateId = "template_vrliyjx";
       const publicKey = "kb9h18Ut8n73eP2f2";
 
-      // Load EmailJS if not already loaded
+      // Ensure EmailJS is loaded and initialized
       if (!window.emailjs) {
-        const script = document.createElement("script");
-        script.src =
-          "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
-        script.onload = () => {
-          window.emailjs.init(publicKey);
-          sendEmail();
-        };
-        document.head.appendChild(script);
-      } else {
-        sendEmail();
+        await new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
       }
 
-      function sendEmail() {
-        const templateParams = {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: "your-email@example.com", // Replace with your email
-        };
+      // Initialize EmailJS with the public key
+      window.emailjs.init(publicKey);
 
-        window.emailjs
-          .send(serviceId, templateId, templateParams)
-          .then(() => {
-            setSubmitStatus("success");
-            setFormData({
-              name: "",
-              email: "",
-              phone: "",
-              subject: "",
-              message: "",
-            });
-          })
-          .catch((error) => {
-            console.error("EmailJS Error:", error);
-            setSubmitStatus("error");
-          })
-          .finally(() => {
-            setIsSubmitting(false);
-          });
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || "Not provided",
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "traulteam@traul.in", // Updated to use your actual email
+        
+        // Alternative variable names that EmailJS commonly uses
+        user_name: formData.name,
+        user_email: formData.email,
+        user_phone: formData.phone || "Not provided",
+        user_subject: formData.subject,
+        user_message: formData.message,
+        
+        // Additional debugging info
+        timestamp: new Date().toISOString(),
+        source: "Traul Website Contact Form"
+      };
+
+      const response = await window.emailjs.send(serviceId, templateId, templateParams);
+      
+      if (response.status === 200) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+        setErrors({});
+      } else {
+        throw new Error("Failed to send email");
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("EmailJS Error:", error);
+      
+      // Provide more specific error information
+      let errorMessage = "Failed to send message. Please try again or contact us directly.";
+      
+      if (error.text) {
+        console.error("EmailJS Error Details:", error.text);
+        if (error.text.includes("Invalid template")) {
+          errorMessage = "Email template configuration error. Please contact support.";
+        } else if (error.text.includes("Invalid service")) {
+          errorMessage = "Email service configuration error. Please contact support.";
+        } else if (error.text.includes("Invalid public key")) {
+          errorMessage = "Email service authentication error. Please contact support.";
+        }
+      }
+      
       setSubmitStatus("error");
+      // You can also set a more detailed error message here if needed
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -161,7 +238,7 @@ const ContactPage = () => {
                 </div>
               )}
 
-              <div className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -178,9 +255,14 @@ const ContactPage = () => {
                       onChange={handleInputChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 disabled:opacity-50"
+                      className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 disabled:opacity-50 ${
+                        errors.name ? 'border-red-500' : 'border-gray-600'
+                      }`}
                       placeholder="Your full name"
                     />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+                    )}
                   </div>
                   <div>
                     <label
@@ -197,9 +279,14 @@ const ContactPage = () => {
                       onChange={handleInputChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 disabled:opacity-50"
+                      className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 disabled:opacity-50 ${
+                        errors.email ? 'border-red-500' : 'border-gray-600'
+                      }`}
                       placeholder="your.email@example.com"
                     />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+                    )}
                   </div>
                 </div>
 
@@ -236,7 +323,9 @@ const ContactPage = () => {
                       onChange={handleInputChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white disabled:opacity-50"
+                      className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white disabled:opacity-50 ${
+                        errors.subject ? 'border-red-500' : 'border-gray-600'
+                      }`}
                     >
                       <option value="">Select a subject</option>
                       <option value="shipping">Shipping Inquiry</option>
@@ -246,6 +335,9 @@ const ContactPage = () => {
                       <option value="partnership">Partnership</option>
                       <option value="other">Other</option>
                     </select>
+                    {errors.subject && (
+                      <p className="mt-1 text-sm text-red-400">{errors.subject}</p>
+                    )}
                   </div>
                 </div>
 
@@ -264,14 +356,18 @@ const ContactPage = () => {
                     onChange={handleInputChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 resize-none disabled:opacity-50"
+                    className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 resize-none disabled:opacity-50 ${
+                      errors.message ? 'border-red-500' : 'border-gray-600'
+                    }`}
                     placeholder="Tell us about your logistics needs..."
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+                  )}
                 </div>
 
                 <button
-                  type="button"
-                  onClick={handleSubmit}
+                  type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
@@ -284,7 +380,7 @@ const ContactPage = () => {
                     "Send Message"
                   )}
                 </button>
-              </div>
+              </form>
             </div>
           </div>
 
