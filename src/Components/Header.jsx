@@ -79,14 +79,14 @@ function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full ${headerBg} transition-all duration-300`}
     >
-             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-5 flex items-center justify-between">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-16 py-5 flex items-center relative">
         {/* Logo */}
-        <Link to="/" onClick={handleLogoClick}>
+        <Link to="/" onClick={handleLogoClick} className="flex-shrink-0 z-10">
           <img src={logo} alt="Traul Logo" className="w-20" />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center justify-center flex-1 gap-8">
+        {/* Desktop Nav - Absolutely centered */}
+        <nav className="hidden md:flex items-center justify-center gap-6 absolute left-1/2 transform -translate-x-1/2">
           <Link
             to="/about-us"
             className="hover:font-semibold text-sm lg:text-base text-black"
@@ -173,8 +173,8 @@ function Header() {
           </div>
         </nav>
 
-        {/* Download and Contact Buttons */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* Download and Contact Buttons - Pushed to far right */}
+        <div className="hidden md:flex items-center gap-3 flex-shrink-0 ml-auto z-10">
           <Link
             to="/download"
             className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 text-sm lg:text-base transition-colors duration-200"
