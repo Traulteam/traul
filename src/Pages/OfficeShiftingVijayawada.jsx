@@ -17,6 +17,12 @@ import {
   Table,
   Luggage,
   ArrowRight,
+  Monitor,
+  Package,
+  FolderOpen,
+  Grid3X3,
+  Stethoscope,
+  User,
 } from "lucide-react";
 
 export default function OfficeShiftingVijayawada() {
@@ -51,7 +57,7 @@ export default function OfficeShiftingVijayawada() {
       desc: "Digital invoices for all corporate accounts.",
     },
     {
-      icon: Boxes,
+      icon: Package,
       title: "Coordinated Loading & Unloading",
       desc: "Efficient handling of furniture, files, and office supplies.",
     },
@@ -61,8 +67,8 @@ export default function OfficeShiftingVijayawada() {
     { icon: Armchair, label: "Office chairs, tables, cabinets" },
     { icon: Monitor, label: "Desktops, laptops, monitors" },
     { icon: Printer, label: "Printers, routers, modems" },
-    { icon: Folder, label: "Files, stationery, boxed documents" },
-    { icon: LayoutGrid, label: "Partitions, whiteboards, and more" },
+    { icon: FolderOpen, label: "Files, stationery, boxed documents" },
+    { icon: Grid3X3, label: "Partitions, whiteboards, and more" },
   ];
 
   const whoFor = [
@@ -81,7 +87,7 @@ export default function OfficeShiftingVijayawada() {
       text: "Visit the app or website and select 'Office Shifting'",
     },
     { icon: MapPin, text: "Choose pickup and destination addresses" },
-    { icon: Boxes, text: "Enter estimated number of items or boxes" },
+    { icon: Package, text: "Enter estimated number of items or boxes" },
     { icon: Truck, text: "Choose vehicle size (based on your inventory)" },
     { icon: Clock, text: "Confirm time slot & book instantly" },
   ];

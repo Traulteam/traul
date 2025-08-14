@@ -188,11 +188,11 @@ export default function AboutContent() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-                             <img 
-                 src="/Delivery3.png" 
-                 alt="Traul vision" 
-                 className="w-full h-auto rounded-2xl shadow-2xl"
-               />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <img 
+                      src="/Delivery3.png" 
+                      alt="Traul vision" 
+                      className="w-full h-[32rem] rounded-2xl shadow-2xl object-cover"
+                    />
                              <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4">
                  <Package className="w-8 h-8 text-orange-500" />
                </div>

@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import scooty from "/asset4.png";
-import threeWheeler from "/asset3.png";
-import tataAce from "/asset2.png";
-import pickup from "/asset5.png";
-import pickup2 from "/asset6.png";
-import eicher from "/asset1.png";
+import scooty from "/2-wheeler.png";
+import threeWheeler from "/3-wheeler.png";
+import tataAce from "/mini-truck.png";
+import pickup from "/8ft.png";
+import pickup2 from "/9ft.png";
+import eicher from "/14ft.png";
 
 const DeliveryMethodsSection = () => {
   const transportServices = [

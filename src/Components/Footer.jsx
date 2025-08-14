@@ -126,34 +126,40 @@ const Footer = () => {
               <h3 className="text-lg font-semibold text-white">Services</h3>
               <div className="space-y-4">
                 <Link
-                  to="/booking#vehicle-options"
+                  to="/vijayawada/office-shifting"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  2-Wheeler Delivery
+                  Office Shifting Services
                 </Link>
                 <Link
-                  to="/booking#vehicle-options"
+                  to="/vijayawada/appliance-moving"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  Mini Truck Transport
+                  Appliance Moving Services
                 </Link>
                 <Link
-                  to="/booking#vehicle-options"
+                  to="/vijayawada/furniture-transport"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  Local Delivery
+                  Furniture Transport Services
                 </Link>
                 <Link
-                  to="/booking#vehicle-options"
+                  to="/vijayawada/house-shifting"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  Outstation Transport
+                  House Shifting Services
                 </Link>
                 <Link
-                  to="/booking#vehicle-options"
+                  to="/vijayawada/mini-truck-booking"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  Scheduled Bookings
+                  Mini Truck Booking
+                </Link>
+                <Link
+                  to="/vijayawada/parcel-delivery"
+                  className="block text-gray-400 hover:text-orange-400 transition-colors"
+                >
+                  Parcel Delivery Services
                 </Link>
               </div>
             </div>
@@ -175,12 +181,12 @@ const Footer = () => {
                 >
                   Blog
                 </a>
-                <a
-                  href="#"
+                <Link
+                  to="/booking"
                   className="block text-gray-400 hover:text-orange-400 transition-colors"
                 >
-                  How It Works
-                </a>
+                  Vijayawada
+                </Link>
                 <Link
                   to={"/disclaimer"}
                   href="#"
@@ -212,6 +218,9 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               © 2025 Traul. All rights reserved. Redefining Last-Mile Logistics
               for Bharat.
+            </p>
+            <p className="text-gray-500 text-xs">
+              Made by SoftexEdge
             </p>
             <nav className="flex items-center gap-6">
               {legalLinks.map((link) => (

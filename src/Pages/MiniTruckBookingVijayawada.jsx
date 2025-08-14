@@ -15,6 +15,11 @@ import {
   Utensils,
   Luggage,
   ArrowRight,
+  DollarSign,
+  Building,
+  Calendar,
+  Users,
+  CheckCircle,
 } from "lucide-react";
 
 const fadeUp = {

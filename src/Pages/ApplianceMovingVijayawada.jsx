@@ -16,6 +16,14 @@ import {
   Utensils,
   Luggage,
   ArrowRight,
+  Shield,
+  Package,
+  AirVent,
+  Microwave,
+  Disc,
+  Battery,
+  Store,
+  Gift,
 } from "lucide-react";
 
 const fadeUp = {

@@ -281,14 +281,18 @@ function VijayawadaBookingPage() {
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:w-5" />
                 </Link>
               </motion.div>
-              <motion.button 
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
               >
-                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                Download App
-              </motion.button>
+                <Link
+                  to="/download"
+                  className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
+                >
+                  <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                  Download App
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -631,13 +635,13 @@ function VijayawadaBookingPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
-                  to="/contact-us"
+                <a
+                  href="tel:+919646443444"
                   className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 flex items-center gap-2 w-full sm:w-auto"
                 >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <Phone className="w-4 h-4 sm:w-5 sm:w-5" />
                   Call Now
-                </Link>
+                </a>
               </motion.div>
             </div>
           </motion.div>
