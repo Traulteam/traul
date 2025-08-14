@@ -28,6 +28,18 @@ import {
 export default function OfficeShiftingVijayawada() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Set meta title and description
+    document.title = "Office Shifting in Vijayawada – Desks, IT Equipment, Files & More";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Relocate your office in Vijayawada with ease. Book safe transport for desks, computers, office furniture, and documents. Flexible slots with live tracking.');
+    } else {
+      const newMetaDescription = document.createElement('meta');
+      newMetaDescription.name = 'description';
+      newMetaDescription.content = 'Relocate your office in Vijayawada with ease. Book safe transport for desks, computers, office furniture, and documents. Flexible slots with live tracking.';
+      document.head.appendChild(newMetaDescription);
+    }
   }, []);
 
   const features = [

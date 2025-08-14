@@ -38,6 +38,18 @@ const fadeUp = {
 export default function ApplianceMovingVijayawada() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Set meta title and description
+    document.title = "Appliance Moving in Vijayawada – Fridge, AC, TV, Washing Machine";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Need to shift appliances? Get quick and safe delivery of fridges, washing machines, ACs, TVs, and more anywhere in Vijayawada. Same-day service available.');
+    } else {
+      const newMetaDescription = document.createElement('meta');
+      newMetaDescription.name = 'description';
+      newMetaDescription.content = 'Need to shift appliances? Get quick and safe delivery of fridges, washing machines, ACs, TVs, and more anywhere in Vijayawada. Same-day service available.';
+      document.head.appendChild(newMetaDescription);
+    }
   }, []);
 
   const features = [

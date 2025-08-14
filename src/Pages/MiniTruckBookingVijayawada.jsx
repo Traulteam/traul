@@ -34,6 +34,18 @@ const fadeUp = {
 export default function MiniTruckBookingVijayawada() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Set meta title and description
+    document.title = "Mini Truck Booking in Vijayawada – Instant Hire, Same-Day Delivery";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Hire mini trucks in Vijayawada for local goods transport. Transparent pricing, verified drivers, live tracking, and quick pickup across all city areas.');
+    } else {
+      const newMetaDescription = document.createElement('meta');
+      newMetaDescription.name = 'description';
+      newMetaDescription.content = 'Hire mini trucks in Vijayawada for local goods transport. Transparent pricing, verified drivers, live tracking, and quick pickup across all city areas.';
+      document.head.appendChild(newMetaDescription);
+    }
   }, []);
 
   const [openIndex, setOpenIndex] = useState(null);

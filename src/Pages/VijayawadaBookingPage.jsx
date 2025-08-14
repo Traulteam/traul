@@ -27,6 +27,18 @@ function VijayawadaBookingPage() {
   const sectionsRef = useRef([]);
 
   useEffect(() => {
+    // Set meta title and description
+    document.title = "Mini Truck & Local Transport Services in Vijayawada – Book Online";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Book mini trucks, house shifting, furniture transport, appliance moving, and same-day parcel delivery in Vijayawada. Fast, affordable, and trackable services.');
+    } else {
+      const newMetaDescription = document.createElement('meta');
+      newMetaDescription.name = 'description';
+      newMetaDescription.content = 'Book mini trucks, house shifting, furniture transport, appliance moving, and same-day parcel delivery in Vijayawada. Fast, affordable, and trackable services.';
+      document.head.appendChild(newMetaDescription);
+    }
+
     const style = document.createElement("style");
     style.textContent = `
       .fade-in-animate {

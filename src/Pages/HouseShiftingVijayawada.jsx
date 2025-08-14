@@ -31,6 +31,18 @@ const fadeUp = {
 export default function HouseShiftingVijayawada() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Set meta title and description
+    document.title = "House Shifting Services in Vijayawada – Safe & Hassle-Free Moves";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Shift your home locally in Vijayawada with ease. Ideal for 1BHK to 3BHK moves, with trained drivers, proper loading, and fast relocation across the city.');
+    } else {
+      const newMetaDescription = document.createElement('meta');
+      newMetaDescription.name = 'description';
+      newMetaDescription.content = 'Shift your home locally in Vijayawada with ease. Ideal for 1BHK to 3BHK moves, with trained drivers, proper loading, and fast relocation across the city.';
+      document.head.appendChild(newMetaDescription);
+    }
   }, []);
 
   const [openIndex, setOpenIndex] = useState(null);

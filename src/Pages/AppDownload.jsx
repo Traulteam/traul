@@ -81,6 +81,18 @@ const itemVariants = {
 export default function AppDownload() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Set meta title and description
+    document.title = "Download Traul App – Book Trucks & Track Orders Instantly";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Get our Android app to book mini trucks, schedule pickups, and track deliveries in real-time. Easy-to-use interface for customers and drivers alike.');
+    } else {
+      const newMetaDescription = document.createElement('meta');
+      newMetaDescription.name = 'description';
+      newMetaDescription.content = 'Get our Android app to book mini trucks, schedule pickups, and track deliveries in real-time. Easy-to-use interface for customers and drivers alike.';
+      document.head.appendChild(newMetaDescription);
+    }
   }, []);
 
   useEffect(() => {

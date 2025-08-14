@@ -31,6 +31,18 @@ const fadeUp = {
 export default function FurnitureTransportVijayawada() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Set meta title and description
+    document.title = "Furniture Transport in Vijayawada – Sofas, Beds, Tables & More";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Move household or office furniture across Vijayawada safely. Book reliable transport for beds, sofas, wardrobes, and other bulky items on-demand.');
+    } else {
+      const newMetaDescription = document.createElement('meta');
+      newMetaDescription.name = 'description';
+      newMetaDescription.content = 'Move household or office furniture across Vijayawada safely. Book reliable transport for beds, sofas, wardrobes, and other bulky items on-demand.';
+      document.head.appendChild(newMetaDescription);
+    }
   }, []);
 
   const features = [

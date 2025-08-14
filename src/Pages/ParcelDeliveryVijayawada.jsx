@@ -28,6 +28,18 @@ const fadeUp = {
 export default function ParcelDeliveryVijayawada() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Set meta title and description
+    document.title = "Parcel Delivery in Vijayawada – Same-Day Local Courier Service";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Send packages, medical items, documents, or boutique orders across Vijayawada within hours. Fast local courier delivery with tracking and secure handling.');
+    } else {
+      const newMetaDescription = document.createElement('meta');
+      newMetaDescription.name = 'description';
+      newMetaDescription.content = 'Send packages, medical items, documents, or boutique orders across Vijayawada within hours. Fast local courier delivery with tracking and secure handling.';
+      document.head.appendChild(newMetaDescription);
+    }
   }, []);
 
   const [openIndex, setOpenIndex] = useState(null);
