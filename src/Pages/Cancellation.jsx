@@ -8,8 +8,8 @@ function Cancellation() {
     // Create a sample PDF download link
     // In a real application, this would link to your actual privacy policy PDF
     const link = document.createElement("a");
-    link.href = "/traulcancellationpolicy.docx"; // Replace with actual PDF URL
-    link.download = "traulcancellationpolicy.docx";
+    link.href = "/traulcancellationpolicy.pdf"; // Replace with actual PDF URL
+    link.download = "traulcancellationpolicy.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

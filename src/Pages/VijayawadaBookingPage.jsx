@@ -27,6 +27,9 @@ function VijayawadaBookingPage() {
   const sectionsRef = useRef([]);
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
     // Set meta title and description
     document.title = "Mini Truck & Local Transport Services in Vijayawada – Book Online";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -106,7 +109,7 @@ function VijayawadaBookingPage() {
   const vehicles = [
     {
       name: "2-Wheeler",
-      capacity: "up to ~800 kg",
+      capacity: "up to ~30 kg",
       price: "₹50",
       ideal: "Fast deliveries and medium loads",
       icon: "/2-wheeler.png",

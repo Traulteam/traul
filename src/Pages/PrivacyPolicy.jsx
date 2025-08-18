@@ -8,8 +8,8 @@ const PrivacyPolicy = () => {
     // Create a sample PDF download link
     // In a real application, this would link to your actual privacy policy PDF
     const link = document.createElement("a");
-    link.href = "/privacypolicy.docx"; // Replace with actual PDF URL
-    link.download = "privacypolicy.docx";
+    link.href = "/privacypolicy.pdf"; // Replace with actual PDF URL
+    link.download = "privacypolicy.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

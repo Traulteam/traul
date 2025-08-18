@@ -8,8 +8,8 @@ function Disclaimer() {
     // Create a sample PDF download link
     // In a real application, this would link to your actual privacy policy PDF
     const link = document.createElement("a");
-    link.href = "/disclaimerpolicy.docx"; // Replace with actual PDF URL
-    link.download = "disclaimerpolicy.docx";
+    link.href = "/disclaimerpolicy.pdf"; // Replace with actual PDF URL
+    link.download = "disclaimerpolicy.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

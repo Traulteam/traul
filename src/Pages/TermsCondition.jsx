@@ -8,8 +8,8 @@ function TermsCondition() {
     // Create a sample PDF download link
     // In a real application, this would link to your actual privacy policy PDF
     const link = document.createElement("a");
-    link.href = "/termandcondition.docx"; // Replace with actual PDF URL
-    link.download = "termandcondition.docx";
+    link.href = "/termandcondition.pdf"; // Replace with actual PDF URL
+    link.download = "termandcondition.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

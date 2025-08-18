@@ -8,8 +8,8 @@ function Refund() {
     // Create a sample PDF download link
     // In a real application, this would link to your actual privacy policy PDF
     const link = document.createElement("a");
-    link.href = "/refundpolicy.docx"; // Replace with actual PDF URL
-    link.download = "refundpolicy.docx";
+    link.href = "/refundpolicy.pdf"; // Replace with actual PDF URL
+    link.download = "refundpolicy.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
