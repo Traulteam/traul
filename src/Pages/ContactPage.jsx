@@ -252,6 +252,39 @@ const ContactPage = () => {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Inquiry Type Toggle - Moved to top */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-3">
+                    Inquiry Type
+                  </label>
+                  <div className="flex bg-gray-700/50 rounded-lg p-1 border border-gray-600">
+                    <button
+                      type="button"
+                      onClick={() => handleInquiryTypeChange("delivery")}
+                      disabled={isSubmitting}
+                      className={`flex-1 py-3 px-4 rounded-md font-medium text-sm transition-all duration-200 ${
+                        formData.inquiryType === "delivery"
+                          ? "bg-orange-500 text-white shadow-lg"
+                          : "text-gray-300 hover:text-white hover:bg-gray-600/50"
+                      } disabled:opacity-50`}
+                    >
+                      For Delivery
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleInquiryTypeChange("enterprise")}
+                      disabled={isSubmitting}
+                      className={`flex-1 py-3 px-4 rounded-md font-medium text-sm transition-all duration-200 ${
+                        formData.inquiryType === "enterprise"
+                          ? "bg-orange-500 text-white shadow-lg"
+                          : "text-gray-300 hover:text-white hover:bg-gray-600/50"
+                      } disabled:opacity-50`}
+                    >
+                      For Enterprise
+                    </button>
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -351,39 +384,6 @@ const ContactPage = () => {
                     {errors.subject && (
                       <p className="mt-1 text-sm text-red-400">{errors.subject}</p>
                     )}
-                  </div>
-                </div>
-
-                {/* Inquiry Type Toggle */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-3">
-                    Inquiry Type
-                  </label>
-                  <div className="flex bg-gray-700/50 rounded-lg p-1 border border-gray-600">
-                    <button
-                      type="button"
-                      onClick={() => handleInquiryTypeChange("delivery")}
-                      disabled={isSubmitting}
-                      className={`flex-1 py-3 px-4 rounded-md font-medium text-sm transition-all duration-200 ${
-                        formData.inquiryType === "delivery"
-                          ? "bg-orange-500 text-white shadow-lg"
-                          : "text-gray-300 hover:text-white hover:bg-gray-600/50"
-                      } disabled:opacity-50`}
-                    >
-                      For Delivery
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleInquiryTypeChange("enterprise")}
-                      disabled={isSubmitting}
-                      className={`flex-1 py-3 px-4 rounded-md font-medium text-sm transition-all duration-200 ${
-                        formData.inquiryType === "enterprise"
-                          ? "bg-orange-500 text-white shadow-lg"
-                          : "text-gray-300 hover:text-white hover:bg-gray-600/50"
-                      } disabled:opacity-50`}
-                    >
-                      For Enterprise
-                    </button>
                   </div>
                 </div>
 
