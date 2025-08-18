@@ -60,7 +60,7 @@ function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className="text-sm sm:text-lg md:text-lg lg:text-xl opacity-90 leading-relaxed max-w-4xl mx-auto mb-0 text-justify lg:text-center"
+          className="text-sm sm:text-base md:text-lg lg:text-xl opacity-90 leading-relaxed max-w-4xl mx-auto mb-0 text-center px-4 sm:px-6 lg:px-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: imageLoaded ? 1 : 0, y: 0 }}
           transition={{
@@ -69,8 +69,7 @@ function HeroSection() {
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
         >
-          Instant 2-Wheeler & Mini Truck Bookings – Fast, Affordable, and Fully Trackable Deliveries Anytime, Anywhere.
-         
+          Instant 2-Wheeler & Mini Truck Bookings – Fast, Affordable, and Fully Trackable Deliveries Anytime, Anywhere.
         </motion.p>
       </div>
     </div>

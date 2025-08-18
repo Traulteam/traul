@@ -77,7 +77,7 @@ function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full ${headerBg} transition-all duration-300`}
     >
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-16 py-5 flex items-center relative">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-16 py-5 flex items-center justify-between relative">
         {/* Logo */}
         <Link to="/" onClick={handleLogoClick} className="flex-shrink-0 z-10">
           <img src={logo} alt="Traul Logo" className="w-20" />
@@ -125,7 +125,7 @@ function Header() {
         {/* Hamburger Icon */}
         <button
           onClick={toggleMenu}
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 z-50"
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 z-50 ml-auto pr-2"
         >
           <span
             className={`w-6 h-0.5 rounded ${menuLineColor} transform transition-all ${
@@ -147,24 +147,24 @@ function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-white text-black transition-all duration-300 ease-in-out ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-white text-black border-t border-gray-200 shadow-lg transition-all duration-300 ease-in-out ${
           isMenuOpen
-            ? "max-h-96 opacity-100 overflow-y-auto"
-            : "max-h-0 opacity-0 overflow-hidden"
+            ? "max-h-screen opacity-100"
+            : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
-        <nav className="flex flex-col px-4 py-4 space-y-4">
+        <nav className="flex flex-col px-6 py-6 space-y-6">
           <Link
             to="/"
             onClick={() => setIsMenuOpen(false)}
-            className="text-sm"
+            className="text-base font-medium text-gray-900 hover:text-orange-600 transition-colors py-2 border-b border-gray-100"
           >
             Home
           </Link>
           <Link
             to="/about-us"
             onClick={() => setIsMenuOpen(false)}
-            className="text-sm"
+            className="text-base font-medium text-gray-900 hover:text-orange-600 transition-colors py-2 border-b border-gray-100"
           >
             About Us
           </Link>
@@ -172,23 +172,23 @@ function Header() {
           <Link
             to="/booking"
             onClick={() => setIsMenuOpen(false)}
-            className="text-sm"
+            className="text-base font-medium text-gray-900 hover:text-orange-600 transition-colors py-2 border-b border-gray-100"
           >
             Vijayawada
           </Link>
           
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-4 pt-4">
             <Link
               to="/contact-us"
               onClick={() => setIsMenuOpen(false)}
-              className="border border-black text-black px-4 py-2 rounded hover:bg-black hover:text-white text-sm w-fit transition-colors duration-200 text-center"
+              className="border-2 border-gray-300 text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-50 text-base font-medium transition-all duration-200 text-center"
             >
               Contact Us
             </Link>
             <Link
               to="/download"
               onClick={() => setIsMenuOpen(false)}
-              className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 text-sm w-fit transition-colors duration-200 text-center"
+              className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 text-base font-medium transition-all duration-200 text-center"
             >
               Download App
             </Link>
