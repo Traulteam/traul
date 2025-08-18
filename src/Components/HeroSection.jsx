@@ -69,10 +69,8 @@ function HeroSection() {
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
         >
-          Book 2-wheeler & mini truck in seconds. Fast, affordable, and
-          trackable delivery services across{" "}
-          <span className="text-black font-semibold">Vijaywada</span> and
-          beyond.
+          Instant 2-Wheeler & Mini Truck Bookings – Fast, Affordable, and Fully Trackable Deliveries Anytime, Anywhere.
+         
         </motion.p>
       </div>
     </div>

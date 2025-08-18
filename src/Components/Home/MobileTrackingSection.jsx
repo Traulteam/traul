@@ -48,7 +48,7 @@ const MobileTrackingSection = () => {
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
-                      <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8505 12 7.8505s-3.5902.3934-5.1367 1.0258L4.841 5.3735a.4161.4161 0 00-.5676-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.61 10.2494.8995 12.8027.8995 15.7646v.2449c0 .1633.1321.2954.2954.2954h21.6092c.1633 0 .2954-.1321.2954-.2954v-.2449c0-2.9619-1.7105-5.5152-5.2209-6.5351" />
+                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
                     </svg>
                   </div>
                   <div className="text-left min-w-0 flex-1">
@@ -83,7 +83,7 @@ const MobileTrackingSection = () => {
 
                 {/* iOS Download Button */}
                 <a 
-                  href="https://apps.apple.com/in/app/traul-driver/id6744351369"
+                  href="https://apps.apple.com/in/app/traul-customer/id6744353195"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-gradient-to-r from-blue-600 to-blue-800 text-white px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-3 xl:px-8 xl:py-4 rounded-lg sm:rounded-xl md:rounded-2xl font-medium flex items-center justify-center gap-1 sm:gap-2 md:gap-3 hover:from-blue-700 hover:to-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 text-xs sm:text-sm md:text-base w-full max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] xl:max-w-none"

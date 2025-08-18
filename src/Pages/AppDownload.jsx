@@ -156,7 +156,7 @@ export default function AppDownload() {
                 Google Play
               </motion.a>
               <motion.a
-                href="https://apps.apple.com/in/app/traul-driver/id6744351369"
+                href="https://apps.apple.com/in/app/traul-customer/id6744353195"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -446,7 +446,7 @@ export default function AppDownload() {
                 Google Play
               </motion.a>
               <motion.a
-                href="https://apps.apple.com/in/app/traul-driver/id6744351369"
+                href="https://apps.apple.com/in/app/traul-customer/id6744353195"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}

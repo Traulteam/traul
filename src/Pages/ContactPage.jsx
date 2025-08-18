@@ -26,6 +26,7 @@ const ContactPage = () => {
     phone: "",
     subject: "",
     message: "",
+    inquiryType: "delivery", // Default to delivery
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -72,6 +73,13 @@ const ContactPage = () => {
     }
   };
 
+  const handleInquiryTypeChange = (type) => {
+    setFormData((prev) => ({
+      ...prev,
+      inquiryType: type,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -108,6 +116,7 @@ const ContactPage = () => {
         phone: formData.phone || "Not provided",
         subject: formData.subject,
         message: formData.message,
+        inquiry_type: formData.inquiryType === "enterprise" ? "For Enterprise" : "For Delivery",
         to_email: "traulteam@traul.in", // Updated to use your actual email
         
         // Alternative variable names that EmailJS commonly uses
@@ -116,6 +125,7 @@ const ContactPage = () => {
         user_phone: formData.phone || "Not provided",
         user_subject: formData.subject,
         user_message: formData.message,
+        user_inquiry_type: formData.inquiryType === "enterprise" ? "For Enterprise" : "For Delivery",
         
         // Additional debugging info
         timestamp: new Date().toISOString(),
@@ -132,6 +142,7 @@ const ContactPage = () => {
           phone: "",
           subject: "",
           message: "",
+          inquiryType: "delivery",
         });
         setErrors({});
       } else {
@@ -340,6 +351,39 @@ const ContactPage = () => {
                     {errors.subject && (
                       <p className="mt-1 text-sm text-red-400">{errors.subject}</p>
                     )}
+                  </div>
+                </div>
+
+                {/* Inquiry Type Toggle */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-3">
+                    Inquiry Type
+                  </label>
+                  <div className="flex bg-gray-700/50 rounded-lg p-1 border border-gray-600">
+                    <button
+                      type="button"
+                      onClick={() => handleInquiryTypeChange("delivery")}
+                      disabled={isSubmitting}
+                      className={`flex-1 py-3 px-4 rounded-md font-medium text-sm transition-all duration-200 ${
+                        formData.inquiryType === "delivery"
+                          ? "bg-orange-500 text-white shadow-lg"
+                          : "text-gray-300 hover:text-white hover:bg-gray-600/50"
+                      } disabled:opacity-50`}
+                    >
+                      For Delivery
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleInquiryTypeChange("enterprise")}
+                      disabled={isSubmitting}
+                      className={`flex-1 py-3 px-4 rounded-md font-medium text-sm transition-all duration-200 ${
+                        formData.inquiryType === "enterprise"
+                          ? "bg-orange-500 text-white shadow-lg"
+                          : "text-gray-300 hover:text-white hover:bg-gray-600/50"
+                      } disabled:opacity-50`}
+                    >
+                      For Enterprise
+                    </button>
                   </div>
                 </div>
 
