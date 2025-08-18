@@ -2,11 +2,13 @@ import React from "react";
 import { Smartphone } from "lucide-react";
 
 const MobileTrackingSection = () => {
-  // Mock phone images - replace with your actual images
-  const androidPhone =
-    "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&h=600&fit=crop";
-  const iPhone =
-    "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=600&fit=crop";
+  // QR code images from public folder
+  const playStoreQR = "/playstoreqr.png";
+  const appStoreQR = "/appstoreqr.png";
+  
+  // Previous phone images for blurred backgrounds
+  const androidPhone = "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&h=600&fit=crop";
+  const iPhone = "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=600&fit=crop";
 
   return (
     <div
@@ -22,12 +24,29 @@ const MobileTrackingSection = () => {
               <div className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-6">
                 <div className="w-32 h-64 xs:w-36 xs:h-72 sm:w-44 sm:h-88 md:w-52 md:h-[420px] lg:w-60 lg:h-[480px] xl:w-64 xl:h-[520px] bg-gradient-to-br from-green-100 to-green-200 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] flex items-center justify-center shadow-lg sm:shadow-xl md:shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 relative">
                   {/* Android phone has more rounded corners and slightly different proportions */}
-                  <div className="w-full h-full bg-gradient-to-b from-gray-800 to-black rounded-[1.25rem] sm:rounded-[1.5rem] md:rounded-[2rem] lg:rounded-[2.5rem] p-1 sm:p-1.5 md:p-2">
-                    <img
-                      src={androidPhone}
-                      alt="GoCargo Android App Interface"
-                      className="object-cover w-full h-full rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[2rem]"
-                    />
+                  <div className="w-full h-full bg-gradient-to-b from-gray-800 to-black rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] p-1 sm:p-1.5 md:p-2">
+                    <div className="w-full h-full bg-gradient-to-br from-blue-50 via-white to-green-50 rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[2rem] flex items-center justify-center p-2 relative overflow-hidden">
+                      {/* Blurred background image */}
+                      <img
+                        src={androidPhone}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[2rem] filter blur-xs opacity-30"
+                      />
+                      {/* Background pattern */}
+                      <div className="absolute inset-0 opacity-10">
+                        <div className="absolute top-2 left-2 w-8 h-8 border-2 border-blue-200 rounded-full"></div>
+                        <div className="absolute bottom-2 right-2 w-6 h-6 border-2 border-green-200 rounded-full"></div>
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 border border-blue-100 rounded-full"></div>
+                      </div>
+                      {/* QR Code overlay */}
+                      <div className="relative z-20 bg-white/80 backdrop-blur-sm rounded-lg p-2 shadow-lg">
+                        <img
+                          src={playStoreQR}
+                          alt="Google Play Store QR Code"
+                          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 object-contain"
+                        />
+                      </div>
+                    </div>
                   </div>
                   {/* Android brand highlight */}
                   <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-green-500 rounded-full opacity-60"></div>
@@ -69,11 +88,28 @@ const MobileTrackingSection = () => {
                   <div className="w-full h-full bg-black rounded-[1.75rem] sm:rounded-[2.25rem] md:rounded-[2.75rem] lg:rounded-[3.25rem] p-1 sm:p-1.5 md:p-2 relative">
                     {/* iPhone notch */}
                     <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-16 h-3 bg-black rounded-full z-10"></div>
-                    <img
-                      src={iPhone}
-                      alt="GoCargo iOS App Interface"
-                      className="object-cover w-full h-full rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem]"
-                    />
+                    <div className="w-full h-full bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] flex items-center justify-center p-2 relative overflow-hidden">
+                      {/* Blurred background image */}
+                      <img
+                        src={iPhone}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] filter blur-xs opacity-30"
+                      />
+                      {/* Background pattern */}
+                      <div className="absolute inset-0 opacity-10">
+                        <div className="absolute top-2 left-2 w-8 h-8 border-2 border-blue-200 rounded-full"></div>
+                        <div className="absolute bottom-2 right-2 w-6 h-6 border-2 border-purple-200 rounded-full"></div>
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 border border-blue-100 rounded-full"></div>
+                      </div>
+                      {/* QR Code overlay */}
+                      <div className="relative z-20 bg-white/80 backdrop-blur-sm rounded-lg p-2 shadow-lg">
+                        <img
+                          src={appStoreQR}
+                          alt="App Store QR Code"
+                          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 object-contain"
+                        />
+                      </div>
+                    </div>
                   </div>
                   {/* iPhone home indicator */}
                   <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-white/30 rounded-full"></div>
