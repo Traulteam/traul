@@ -15,7 +15,7 @@ const DeliveryMethodsSection = () => {
       subtitle:
         "Perfect for fast, city-wide deliveries of lightweight items. Ideal for businesses needing quick dispatch of parcels with real-time tracking.",
       capacity: "Up to 20kg - 30kg",
-      deliveryTime: "Rs. 200",
+      deliveryTime: "Rs. 50",
       perfectFor: [
         "Documents & Parcels",
         "Food Delivery",

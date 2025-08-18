@@ -107,7 +107,7 @@ function VijayawadaBookingPage() {
     {
       name: "2-Wheeler",
       capacity: "up to ~800 kg",
-      price: "₹200",
+      price: "₹50",
       ideal: "Fast deliveries and medium loads",
       icon: "/2-wheeler.png",
       description: "Book 2-wheeler in seconds. Fast, affordable, and trackable delivery services across Vijayawada and beyond.",
