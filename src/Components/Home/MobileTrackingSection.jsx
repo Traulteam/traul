@@ -2,11 +2,7 @@ import React from "react";
 import { Smartphone } from "lucide-react";
 
 const MobileTrackingSection = () => {
-  // QR code images from public folder
-  const playStoreQR = "/playstoreqr.png";
-  const appStoreQR = "/appstoreqr.png";
-  
-  // Previous phone images for blurred backgrounds
+  // Previous phone images for backgrounds
   const androidPhone = "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&h=600&fit=crop";
   const iPhone = "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=600&fit=crop";
 
@@ -26,25 +22,17 @@ const MobileTrackingSection = () => {
                   {/* Android phone has more rounded corners and slightly different proportions */}
                   <div className="w-full h-full bg-gradient-to-b from-gray-800 to-black rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] p-1 sm:p-1.5 md:p-2">
                     <div className="w-full h-full bg-gradient-to-br from-blue-50 via-white to-green-50 rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[2rem] flex items-center justify-center p-2 relative overflow-hidden">
-                      {/* Blurred background image */}
+                      {/* Clear background image */}
                       <img
                         src={androidPhone}
                         alt=""
-                        className="absolute inset-0 w-full h-full object-cover rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[2rem] filter blur-xs opacity-30"
+                        className="absolute inset-0 w-full h-full object-cover rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem] lg:rounded-[2rem] opacity-80"
                       />
                       {/* Background pattern */}
                       <div className="absolute inset-0 opacity-10">
                         <div className="absolute top-2 left-2 w-8 h-8 border-2 border-blue-200 rounded-full"></div>
                         <div className="absolute bottom-2 right-2 w-6 h-6 border-2 border-green-200 rounded-full"></div>
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 border border-blue-100 rounded-full"></div>
-                      </div>
-                      {/* QR Code overlay */}
-                      <div className="relative z-20 bg-white/80 backdrop-blur-sm rounded-lg p-2 shadow-lg">
-                        <img
-                          src={playStoreQR}
-                          alt="Google Play Store QR Code"
-                          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 object-contain"
-                        />
                       </div>
                     </div>
                   </div>
@@ -89,25 +77,17 @@ const MobileTrackingSection = () => {
                     {/* iPhone notch */}
                     <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-16 h-3 bg-black rounded-full z-10"></div>
                     <div className="w-full h-full bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] flex items-center justify-center p-2 relative overflow-hidden">
-                      {/* Blurred background image */}
+                      {/* Clear background image */}
                       <img
                         src={iPhone}
                         alt=""
-                        className="absolute inset-0 w-full h-full object-cover rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] filter blur-xs opacity-30"
+                        className="absolute inset-0 w-full h-full object-cover rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] opacity-80"
                       />
                       {/* Background pattern */}
                       <div className="absolute inset-0 opacity-10">
                         <div className="absolute top-2 left-2 w-8 h-8 border-2 border-blue-200 rounded-full"></div>
                         <div className="absolute bottom-2 right-2 w-6 h-6 border-2 border-purple-200 rounded-full"></div>
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 border border-blue-100 rounded-full"></div>
-                      </div>
-                      {/* QR Code overlay */}
-                      <div className="relative z-20 bg-white/80 backdrop-blur-sm rounded-lg p-2 shadow-lg">
-                        <img
-                          src={appStoreQR}
-                          alt="App Store QR Code"
-                          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 object-contain"
-                        />
                       </div>
                     </div>
                   </div>
@@ -207,7 +187,7 @@ const MobileTrackingSection = () => {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm md:text-base text-gray-600 text-center lg:text-left">
-                Scan the QR codes with your phone camera to instantly download
+                Click the download buttons above to instantly download
                 the Traul app from your device's app store.
               </p>
             </div>
