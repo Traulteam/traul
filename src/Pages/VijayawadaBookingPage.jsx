@@ -107,7 +107,7 @@ function VijayawadaBookingPage() {
     {
       name: "2-Wheeler",
       capacity: "up to ~800 kg",
-      price: "₹200+",
+      price: "₹200",
       ideal: "Fast deliveries and medium loads",
       icon: "/2-wheeler.png",
       description: "Book 2-wheeler in seconds. Fast, affordable, and trackable delivery services across Vijayawada and beyond.",
@@ -115,7 +115,7 @@ function VijayawadaBookingPage() {
     {
       name: "Three-Wheeler",
       capacity: "up to ~500 kg",
-      price: "₹150+",
+      price: "₹300",
       ideal: "Market runs and small loads",
       icon: "/3-wheeler.png",
       description: "Perfect for fast, city-wide deliveries of lightweight items. Ideal for businesses needing quick dispatch of parcels.",
@@ -123,7 +123,7 @@ function VijayawadaBookingPage() {
     {
       name: "Mini Truck",
       capacity: "700-800 kg",
-      price: "₹270+",
+      price: "₹400",
       ideal: "Medium consignments",
       icon: "/mini-truck.png",
       description: "Reliable and spacious enough for moderate loads. Perfect for shops, construction sites, and home shifting needs.",
@@ -131,7 +131,7 @@ function VijayawadaBookingPage() {
     {
       name: "Extended Pickup (8 ft)",
       capacity: "up to ~1.25 tonnes",
-      price: "₹320+",
+      price: "₹500",
       ideal: "Household items, small office moves",
       icon: "/8ft.png",
       description: "A strong and versatile choice for heavier deliveries. Ideal for B2B, hardware dealers, or shifting large loads.",
@@ -139,7 +139,7 @@ function VijayawadaBookingPage() {
     {
       name: "Large Pickup (12-14 ft)",
       capacity: "2-3 tonnes",
-      price: "₹550+",
+      price: "₹600+",
       ideal: "Bulkier goods and heavier loads",
       icon: "/9ft.png",
       description: "Traul's biggest carrier, ideal for large and heavy shipments over longer distances. Used by wholesalers and manufacturers.",

@@ -180,7 +180,7 @@ export default function AboutContent() {
               className="relative"
             >
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <img 
-                      src="/Delivery3.png" 
+                      src="/Delivery6.png" 
                       alt="Traul vision" 
                       className="w-full h-[32rem] rounded-2xl shadow-2xl object-cover"
                     />

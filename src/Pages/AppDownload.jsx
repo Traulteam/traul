@@ -398,7 +398,7 @@ export default function AppDownload() {
             >
                              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                  <img 
-                   src="/Delivery3.png" 
+                   src="/Delivery6.png" 
                    alt="Traul app interface" 
                    className="w-full h-auto object-cover"
                  />
