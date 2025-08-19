@@ -5,7 +5,7 @@ import { Readable } from 'stream';
 import fs from 'fs';
 
 async function generateSitemap() {
-  const hostname = 'https://traul.vercel.app'; // Replace with your domain
+  const hostname = 'https://www.traul.in'; // Replace with your domain
 
   // Define your static routes
   const staticLinks = [
