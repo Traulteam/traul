@@ -4,16 +4,6 @@ function Disclaimer() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const handleDownloadPDF = () => {
-    // Create a sample PDF download link
-    // In a real application, this would link to your actual privacy policy PDF
-    const link = document.createElement("a");
-    link.href = "/disclaimerpolicy.pdf"; // Replace with actual PDF URL
-    link.download = "disclaimerpolicy.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <section className="bg-black min-h-screen py-30">
@@ -27,40 +17,37 @@ function Disclaimer() {
             <div className="h-1 w-32 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
           </div>
 
-          {/* Subtitle */}
-          <h2 className="text-2xl lg:text-3xl font-semibold text-gray-300 mb-4">
-            Disclaimer Information
-          </h2>
-          <p className="text-gray-300 text-xl lg:text-2xl leading-relaxed text-justify max-w-3xl">
-            Please Read Our Disclaimer Policy Your use of our services is
-            subject to the terms outlined in our comprehensive Refund Policy.
-            Download and review the full document to understand the conditions
-            under which refunds are granted, your eligibility, and the
-            procedures for requesting a cancellation.
-          </p>
+          {/* Policy Content */}
+          <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 p-8 max-w-4xl text-left">
+            <div className="space-y-6">
+              <p className="text-gray-300 leading-relaxed text-lg">
+                By accessing and using the Traul website, mobile applications, and services (collectively, "Traul Apps"), you acknowledge that the information provided is for general informational purposes only, and while we strive to ensure the accuracy and reliability of the content, we make no guarantees regarding its completeness or suitability.
+              </p>
 
-          {/* Download Button */}
-          <div>
-            <button
-              onClick={handleDownloadPDF}
-              className="group inline-flex items-center px-12 py-6 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-orange-500/30"
-            >
-              <svg
-                className="w-6 h-6 mr-3 transition-transform duration-300 group-hover:animate-bounce"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-              Download Disclaimer Policy PDF
-              <span className="ml-2">→</span>
-            </button>
+              <p className="text-gray-300 leading-relaxed text-lg">
+                The services are provided "as is" and "as available," with no warranties, express or implied, including, but not limited to, warranties of merchantability, fitness for a particular purpose, or non-infringement. Traul is not liable for any damages, losses, or expenses arising from the use of the platform, including direct, indirect, incidental, or consequential damages.
+              </p>
+
+              <p className="text-gray-300 leading-relaxed text-lg">
+                The content on the Traul Apps does not constitute professional advice, and you should seek appropriate professional guidance when necessary. Traul acts solely as an intermediary platform connecting users with service providers. We are not responsible for any delivery failures, service interruptions, or issues arising from the actions or omissions of service providers using the platform.
+              </p>
+
+              <p className="text-gray-300 leading-relaxed text-lg">
+                Traul is not responsible for third-party content or services linked from the platform, and your use of such links is at your own risk. We reserve the right to update or modify this Disclaimer Policy at any time without prior notice, and any changes will be effective immediately upon posting.
+              </p>
+
+              <p className="text-gray-300 leading-relaxed text-lg">
+                This policy is governed by the laws of the jurisdiction in which Traul operates, and any disputes will be subject to the exclusive jurisdiction of the courts in that jurisdiction. By using the Traul Apps, you agree to the terms outlined in this Disclaimer Policy.
+              </p>
+
+              <p className="text-gray-300 leading-relaxed text-lg">
+                Users are responsible for providing accurate and complete information when using the Traul Apps. Traul is not liable for any issues, delays, or failures resulting from incorrect or incomplete information provided by users.
+              </p>
+
+              <p className="text-gray-300 leading-relaxed text-lg">
+                If you do not agree with the Policy, please refrain from using the platform. For any questions or concerns, please contact us via the support page of the Traul Apps.
+              </p>
+            </div>
           </div>
 
           {/* Additional Info */}
@@ -83,11 +70,10 @@ function Disclaimer() {
               </div>
             </div>
             <h3 className="text-white font-semibold text-xl mb-3">
-              Secure & Transparent
+              Important Notice
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              Our Disclaimer Policy is regularly updated to reflect current
-              practices and regulations. Last updated: January 2025
+              This disclaimer policy outlines the terms and conditions for using Traul's services. Please read carefully before proceeding.
             </p>
           </div>
         </div>
