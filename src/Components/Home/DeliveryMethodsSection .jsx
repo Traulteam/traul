@@ -14,7 +14,7 @@ const DeliveryMethodsSection = () => {
       title: "2-Wheeler Delivery",
       subtitle:
         "Perfect for fast, city-wide deliveries of lightweight items. Ideal for businesses needing quick dispatch of parcels with real-time tracking.",
-      capacity: "Up to 20kg - 30kg",
+      capacity: "Upto - 30kg",
       deliveryTime: "Rs. 50",
       perfectFor: [
         "Documents & Parcels",
@@ -28,7 +28,7 @@ const DeliveryMethodsSection = () => {
       title: "3-Wheeler Cargo",
       subtitle:
         "Compact and agile, this 3-wheeler is great for urban areas and narrow roads. Ideal for small businesses and retail deliveries across short distances.",
-      capacity: "400 – 500 kg",
+      capacity: "Upto - 500 kg",
       deliveryTime: "Rs. 300",
       perfectFor: ["Packaged goods", "Groceries", "Hardware items"],
       icon: threeWheeler,
@@ -37,7 +37,7 @@ const DeliveryMethodsSection = () => {
       title: "Tata Ace / Chota Hathi",
       subtitle:
         "Reliable and spacious enough for moderate loads. The Tata Ace is perfect for shops, construction sites, and home shifting needs within city limits.",
-      capacity: "700 – 750 kg",
+      capacity: "Upto - 750 kg",
       deliveryTime: "Rs. 400",
       perfectFor: ["Furniture", "Construction Materials", "Shop Stock"],
       icon: tataAce,
@@ -46,7 +46,7 @@ const DeliveryMethodsSection = () => {
       title: "Pickup 8ft",
       subtitle:
         "A strong and versatile choice for heavier deliveries. Ideal for B2B, hardware dealers, or shifting large loads across neighborhoods or towns.",
-      capacity: "1000 – 1200 kg",
+      capacity: "Upto - 1200 kg",
       deliveryTime: "Rs. 500",
       perfectFor: ["Cement Bags", "Home Shifting", "Shop Relocation"],
       icon: pickup,
@@ -55,7 +55,7 @@ const DeliveryMethodsSection = () => {
       title: "Pickup 9ft",
       subtitle:
         "Spacious and sturdy for high-volume or medium-distance goods movement. Suits both commercial and semi-industrial logistics within and across cities.",
-      capacity: "1500 – 1700 kg",
+      capacity: "Upto - 1700 kg",
       deliveryTime: "Rs. 600",
       perfectFor: ["Retail Supply", "Heavy Appliances", "Carton Loads"],
       icon: pickup2,
@@ -64,7 +64,7 @@ const DeliveryMethodsSection = () => {
       title: "Eicher 14ft",
       subtitle:
         "Traul's biggest carrier, ideal for large and heavy shipments over longer distances. Used by wholesalers, warehouses, event planners, and manufacturers.",
-      capacity: "2000 – 3000 kg",
+      capacity: "Upto - 3000 kg",
       deliveryTime: "Rs. 700",
       perfectFor: [
         "Bulk Wholesale Goods",

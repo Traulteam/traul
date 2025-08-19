@@ -6,6 +6,7 @@ import { ChevronDown } from "lucide-react";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
 
   // Check if current page is one of the policy pages that should have white background
@@ -30,6 +31,22 @@ function Header() {
     setIsMenuOpen((prev) => !prev);
   }, []);
 
+  const toggleDropdown = useCallback(() => {
+    setIsDropdownOpen((prev) => !prev);
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.dropdown-container')) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   // Handle logo click - scroll to top and navigate to home
   const handleLogoClick = useCallback(() => {
     // Always scroll to top when logo is clicked
@@ -52,6 +69,7 @@ function Header() {
   // Close menu on route change
   useEffect(() => {
     setIsMenuOpen(false);
+    setIsDropdownOpen(false);
   }, [location.pathname]);
 
   // Close menu on window resize (desktop view)
@@ -59,6 +77,7 @@ function Header() {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsMenuOpen(false);
+        setIsDropdownOpen(false);
       }
     };
 
@@ -98,12 +117,75 @@ function Header() {
             About Us
           </Link>
           
-          <Link
-            to="/booking"
-            className="hover:font-semibold text-sm lg:text-base text-black"
-          >
-            Vijayawada
-          </Link>
+          {/* Vijayawada Dropdown */}
+          <div className="dropdown-container relative">
+            <div className="flex items-center gap-1">
+              <Link
+                to="/booking"
+                className="hover:font-semibold text-sm lg:text-base text-black transition-all duration-200"
+              >
+                Vijayawada
+              </Link>
+              <button
+                onClick={toggleDropdown}
+                className="p-1 hover:bg-gray-100 rounded transition-all duration-200"
+              >
+                <ChevronDown 
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    isDropdownOpen ? 'rotate-180' : ''
+                  }`} 
+                />
+              </button>
+            </div>
+            
+            {/* Dropdown Menu */}
+            {isDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
+                <Link
+                  to="/vijayawada/office-shifting"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-200"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Office Shifting Services
+                </Link>
+                <Link
+                  to="/vijayawada/appliance-moving"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-200"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Appliance Moving Services
+                </Link>
+                <Link
+                  to="/vijayawada/furniture-transport"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-200"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Furniture Transport Services
+                </Link>
+                <Link
+                  to="/vijayawada/house-shifting"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-200"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  House Shifting Services
+                </Link>
+                <Link
+                  to="/vijayawada/mini-truck-booking"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-200"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Mini Truck Booking
+                </Link>
+                <Link
+                  to="/vijayawada/parcel-delivery"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors duration-200"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Parcel Delivery Services
+                </Link>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Download and Contact Buttons - Pushed to far right */}
@@ -169,13 +251,56 @@ function Header() {
             About Us
           </Link>
           
-          <Link
-            to="/booking"
-            onClick={() => setIsMenuOpen(false)}
-            className="text-base font-medium text-gray-900 hover:text-orange-600 transition-colors py-2 border-b border-gray-100"
-          >
-            Vijayawada
-          </Link>
+          {/* Mobile Vijayawada Services */}
+          <div className="space-y-2">
+            <div className="text-base font-medium text-gray-900 py-2 border-b border-gray-100">
+              Vijayawada Services
+            </div>
+            <div className="pl-4 space-y-2">
+              <Link
+                to="/vijayawada/office-shifting"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-1"
+              >
+                Office Shifting Services
+              </Link>
+              <Link
+                to="/vijayawada/appliance-moving"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-1"
+              >
+                Appliance Moving Services
+              </Link>
+              <Link
+                to="/vijayawada/furniture-transport"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-1"
+              >
+                Furniture Transport Services
+              </Link>
+              <Link
+                to="/vijayawada/house-shifting"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-1"
+              >
+                House Shifting Services
+              </Link>
+              <Link
+                to="/vijayawada/mini-truck-booking"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-1"
+              >
+                Mini Truck Booking
+              </Link>
+              <Link
+                to="/vijayawada/parcel-delivery"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-sm text-gray-600 hover:text-orange-600 transition-colors py-1"
+              >
+                Parcel Delivery Services
+              </Link>
+            </div>
+          </div>
           
           <div className="flex flex-col gap-4 pt-4">
             <Link
