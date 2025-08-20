@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import hero from "/hero3.png";
-import hero2 from "/hero4.png";
+import hero from "/hero1.png";
+import hero2 from "/hero2.png";
 
 function HeroSection() {
   const [isMobile, setIsMobile] = useState(false);
