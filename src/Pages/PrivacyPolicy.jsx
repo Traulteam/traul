@@ -20,6 +20,11 @@ const PrivacyPolicy = () => {
           {/* Policy Content */}
           <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 p-8 max-w-5xl text-left">
             <div className="space-y-8">
+              {/* Header */}
+              <div className="text-center border-b border-gray-700 pb-6">
+                <h2 className="text-3xl font-bold text-white mb-2">PRIVACY POLICY</h2>
+              </div>
+
               {/* Introduction */}
               <div>
                 <p className="text-gray-300 leading-relaxed text-lg">
@@ -94,7 +99,7 @@ const PrivacyPolicy = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-orange-400 mb-2">2.1 Purpose of Data Collection</h3>
                     <p className="text-gray-300 leading-relaxed mb-3">
-                      We use the personal information we collect for the following purposes:
+                      In the Traul Customer and Traul driver apps we use the personal information we collect for the following purposes:
                     </p>
                     <div className="ml-4 space-y-2">
                       <p className="text-gray-300 leading-relaxed">
@@ -155,7 +160,7 @@ const PrivacyPolicy = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-orange-400 mb-2">3.3 User Responsibilities</h3>
                     <p className="text-gray-300 leading-relaxed">
-                      You are responsible for maintaining the confidentiality of your personal information, including login details and any other data you obtain via the Traul Apps. You should not share your credentials or other sensitive information with others.
+                      You are responsible for maintaining the confidentiality of your personal information, including login details and any other data you obtain via the Traul Customer and Traul driver Apps. You should not share your credentials or other sensitive information with others.
                     </p>
                   </div>
                 </div>
@@ -258,7 +263,7 @@ const PrivacyPolicy = () => {
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">8. Third-Party Websites and Links</h2>
                   <p className="text-gray-300 leading-relaxed">
-                    The Traul Apps may contain links to third-party websites or advertisements. Please be aware that once you leave the Traul Apps and visit these third-party websites, we no longer have control over their privacy practices, and this Privacy Policy does not apply. We recommend that you review the privacy policies of those third-party sites to understand how your personal information may be collected, used, and disclosed.
+                    The Traul Customer and Traul driver Apps may contain links to third-party websites or advertisements. Please be aware that once you leave the Traul Apps and visit these third-party websites, we no longer have control over their privacy practices, and this Privacy Policy does not apply. We recommend that you review the privacy policies of those third-party sites to understand how your personal information may be collected, used, and disclosed.
                   </p>
                 </div>
 
@@ -282,10 +287,11 @@ const PrivacyPolicy = () => {
                     In accordance with the Information Technology Act, 2000, and applicable rules, we have appointed a Grievance Officer to address any queries or concerns regarding this Privacy Policy. If you have any questions, please reach out to our Grievance Officer at:
                   </p>
                   <div className="ml-4 mt-2 text-gray-300">
-                    <p>[Grievance Officer Name]</p>
-                    <p>[Email Address]</p>
-                    <p>[Phone Number]</p>
-                    <p>[Address]</p>
+                    <p><strong>Manthena Teja Varma</strong></p>
+                    <p>traulteam@gmail.com</p>
+                    <p>9646443444</p>
+                    <p>poojitha waterfront appartments</p>
+                    <p>Tadepalle, Andhra Pradesh, 522501.</p>
                   </div>
                 </div>
 
