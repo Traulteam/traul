@@ -3,11 +3,12 @@ import React, { useEffect, useState } from "react";
 const ContactPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Preload EmailJS for better performance
     if (!window.emailjs) {
       const script = document.createElement("script");
-      script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
+      script.src =
+        "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
       script.async = true;
       script.onload = () => {
         // Initialize EmailJS once the script is loaded
@@ -34,64 +35,84 @@ const ContactPage = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
     }
-    
+
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    
+
     if (!formData.subject) {
       newErrors.subject = "Please select a subject";
     }
-    
+
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
+
+    // For select elements, ensure we get the full value
+    const inputValue = type === "select-one" ? value : value;
+
+    console.log(
+      `Input changed - Name: ${name}, Value: ${inputValue}, Type: ${type}`
+    ); // Debug log
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: inputValue,
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ""
+        [name]: "",
       }));
     }
   };
 
   const handleInquiryTypeChange = (type) => {
+    console.log("Toggle button clicked:", type); // Debug log
     setFormData((prev) => ({
       ...prev,
       inquiryType: type,
     }));
+    console.log("Updated formData:", { ...formData, inquiryType: type }); // Debug log
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
+    // Debug log before submission - show each field individually
+    console.log("=== FORM SUBMISSION DEBUG ===");
+    console.log("Name:", formData.name);
+    console.log("Email:", formData.email);
+    console.log("Phone:", formData.phone);
+    console.log("Subject:", formData.subject);
+    console.log("Message:", formData.message);
+    console.log("Inquiry Type:", formData.inquiryType);
+    console.log("Full formData object:", formData);
+    console.log("=== END DEBUG ===");
+
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      // EmailJS configuration - replace with your actual values
       const serviceId = "service_ljrtlpm";
       const templateId = "template_vrliyjx";
       const publicKey = "kb9h18Ut8n73eP2f2";
@@ -100,7 +121,8 @@ const ContactPage = () => {
       if (!window.emailjs) {
         await new Promise((resolve, reject) => {
           const script = document.createElement("script");
-          script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
+          script.src =
+            "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
           script.onload = resolve;
           script.onerror = reject;
           document.head.appendChild(script);
@@ -116,24 +138,69 @@ const ContactPage = () => {
         phone: formData.phone || "Not provided",
         subject: formData.subject,
         message: formData.message,
-        inquiry_type: formData.inquiryType === "enterprise" ? "For Enterprise" : "For Delivery",
+        inquiry_type:
+          formData.inquiryType === "enterprise"
+            ? "For Enterprise"
+            : "For Delivery",
         to_email: "traulteam@traul.in", // Updated to use your actual email
-        
+
         // Alternative variable names that EmailJS commonly uses
         user_name: formData.name,
         user_email: formData.email,
         user_phone: formData.phone || "Not provided",
         user_subject: formData.subject,
         user_message: formData.message,
-        user_inquiry_type: formData.inquiryType === "enterprise" ? "For Enterprise" : "For Delivery",
-        
+        user_inquiry_type:
+          formData.inquiryType === "enterprise"
+            ? "For Enterprise"
+            : "For Delivery",
+
         // Additional debugging info
         timestamp: new Date().toISOString(),
-        source: "Traul Website Contact Form"
+        source: "Traul Website Contact Form",
+
+        // Raw inquiry type for debugging
+        raw_inquiry_type: formData.inquiryType,
+
+        // Multiple variations to ensure compatibility
+        inquiryType: formData.inquiryType,
+        inquiryTypeFormatted:
+          formData.inquiryType === "enterprise"
+            ? "Enterprise Inquiry"
+            : "Delivery Inquiry",
+        isEnterprise: formData.inquiryType === "enterprise" ? "Yes" : "No",
+        isDelivery: formData.inquiryType === "delivery" ? "Yes" : "No",
+
+        // Most common EmailJS variable names
+        inquiry_type_simple: formData.inquiryType,
+        inquiry_type_full:
+          formData.inquiryType === "enterprise"
+            ? "Enterprise Inquiry"
+            : "Delivery Inquiry",
+        inquiry_type_label:
+          formData.inquiryType === "enterprise" ? "Enterprise" : "Delivery",
       };
 
-      const response = await window.emailjs.send(serviceId, templateId, templateParams);
-      
+      // Debug log the template parameters
+      console.log("EmailJS template parameters:", templateParams);
+
+      // Specific debug log for inquiry type
+      console.log("=== INQUIRY TYPE DEBUG ===");
+      console.log("Raw inquiryType from form:", formData.inquiryType);
+      console.log("Formatted inquiry_type:", templateParams.inquiry_type);
+      console.log("User inquiry type:", templateParams.user_inquiry_type);
+      console.log("Simple inquiry type:", templateParams.inquiry_type_simple);
+      console.log("Full inquiry type:", templateParams.inquiry_type_full);
+      console.log("=== END INQUIRY TYPE DEBUG ===");
+
+      const response = await window.emailjs.send(
+        serviceId,
+        templateId,
+        templateParams
+      );
+
+      console.log("EmailJS response:", response); // Debug log
+
       if (response.status === 200) {
         setSubmitStatus("success");
         setFormData({
@@ -150,21 +217,26 @@ const ContactPage = () => {
       }
     } catch (error) {
       console.error("EmailJS Error:", error);
-      
+      console.error("Form data that failed:", formData); // Debug log
+
       // Provide more specific error information
-      let errorMessage = "Failed to send message. Please try again or contact us directly.";
-      
+      let errorMessage =
+        "Failed to send message. Please try again or contact us directly.";
+
       if (error.text) {
         console.error("EmailJS Error Details:", error.text);
         if (error.text.includes("Invalid template")) {
-          errorMessage = "Email template configuration error. Please contact support.";
+          errorMessage =
+            "Email template configuration error. Please contact support.";
         } else if (error.text.includes("Invalid service")) {
-          errorMessage = "Email service configuration error. Please contact support.";
+          errorMessage =
+            "Email service configuration error. Please contact support.";
         } else if (error.text.includes("Invalid public key")) {
-          errorMessage = "Email service authentication error. Please contact support.";
+          errorMessage =
+            "Email service authentication error. Please contact support.";
         }
       }
-      
+
       setSubmitStatus("error");
       // You can also set a more detailed error message here if needed
     } finally {
@@ -180,10 +252,13 @@ const ContactPage = () => {
         </svg>
       ),
       title: "Visit Our Office",
-      content:
-        "Poojitha Waterfront Apartments\nKunchanapalli, India, 52250",
+      content: "Poojitha Waterfront Apartments\nKunchanapalli, India, 52250",
       action: "Get Directions",
-      onClick: () => window.open("https://maps.app.goo.gl/kavaRCG7KHagRwcn9?g_st=com.google.maps.preview.copy", "_blank"),
+      onClick: () =>
+        window.open(
+          "https://maps.app.goo.gl/kavaRCG7KHagRwcn9?g_st=com.google.maps.preview.copy",
+          "_blank"
+        ),
     },
     {
       icon: (
@@ -283,6 +358,15 @@ const ContactPage = () => {
                       For Enterprise
                     </button>
                   </div>
+                  {/* Debug indicator - shows current selection */}
+                  <div className="mt-2 text-xs text-gray-400">
+                    Selected:{" "}
+                    <span className="text-orange-400 font-medium">
+                      {formData.inquiryType === "enterprise"
+                        ? "Enterprise"
+                        : "Delivery"}
+                    </span>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -302,7 +386,7 @@ const ContactPage = () => {
                       required
                       disabled={isSubmitting}
                       className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 disabled:opacity-50 ${
-                        errors.name ? 'border-red-500' : 'border-gray-600'
+                        errors.name ? "border-red-500" : "border-gray-600"
                       }`}
                       placeholder="Your full name"
                     />
@@ -326,12 +410,14 @@ const ContactPage = () => {
                       required
                       disabled={isSubmitting}
                       className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 disabled:opacity-50 ${
-                        errors.email ? 'border-red-500' : 'border-gray-600'
+                        errors.email ? "border-red-500" : "border-gray-600"
                       }`}
                       placeholder="your.email@example.com"
                     />
                     {errors.email && (
-                      <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+                      <p className="mt-1 text-sm text-red-400">
+                        {errors.email}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -370,7 +456,7 @@ const ContactPage = () => {
                       required
                       disabled={isSubmitting}
                       className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white disabled:opacity-50 ${
-                        errors.subject ? 'border-red-500' : 'border-gray-600'
+                        errors.subject ? "border-red-500" : "border-gray-600"
                       }`}
                     >
                       <option value="">Select a subject</option>
@@ -382,8 +468,17 @@ const ContactPage = () => {
                       <option value="other">Other</option>
                     </select>
                     {errors.subject && (
-                      <p className="mt-1 text-sm text-red-400">{errors.subject}</p>
+                      <p className="mt-1 text-sm text-red-400">
+                        {errors.subject}
+                      </p>
                     )}
+                    {/* Debug indicator for subject */}
+                    <div className="mt-1 text-xs text-gray-400">
+                      Selected Subject:{" "}
+                      <span className="text-orange-400 font-medium">
+                        {formData.subject || "None"}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
@@ -403,12 +498,14 @@ const ContactPage = () => {
                     required
                     disabled={isSubmitting}
                     className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 resize-none disabled:opacity-50 ${
-                      errors.message ? 'border-red-500' : 'border-gray-600'
+                      errors.message ? "border-red-500" : "border-gray-600"
                     }`}
                     placeholder="Tell us about your logistics needs..."
                   />
                   {errors.message && (
-                    <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+                    <p className="mt-1 text-sm text-red-400">
+                      {errors.message}
+                    </p>
                   )}
                 </div>
 
@@ -475,8 +572,8 @@ const ContactPage = () => {
               <p className="text-gray-300 mb-6 whitespace-pre-line leading-relaxed">
                 {info.content}
               </p>
-              <button 
-                onClick={info.onClick} 
+              <button
+                onClick={info.onClick}
                 className="text-orange-400 hover:text-orange-300 font-medium transition-colors group-hover:underline"
               >
                 {info.action} →
