@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import hero from "/hero1.png";
-import hero2 from "/hero2.png";
+import hero from "/hero5.png";
+import hero2 from "/hero6.png";
 
 function HeroSection() {
   const [isMobile, setIsMobile] = useState(false);
@@ -69,7 +69,8 @@ function HeroSection() {
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
         >
-          Instant 2-Wheeler & Mini Truck Bookings – Fast, Affordable, and Fully Trackable Deliveries Anytime, Anywhere.
+          Instant 2-Wheeler & Mini Truck Bookings – Fast, Affordable, and Fully
+          Trackable Deliveries Anytime, Anywhere.
         </motion.p>
       </div>
     </div>
