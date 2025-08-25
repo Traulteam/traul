@@ -17,7 +17,7 @@ function Header() {
     "/cancel",
     "/disclaimer",
     "/about-us",
-    "/booking",
+    "/vijayawada",
     "/download",
          "/vijayawada/office-shifting",
      "/vijayawada/appliance-moving",
@@ -121,7 +121,7 @@ function Header() {
           <div className="dropdown-container relative">
             <div className="flex items-center gap-1">
               <Link
-                to="/booking"
+                to="/vijayawada"
                 className="hover:font-semibold text-sm lg:text-base text-black transition-all duration-200"
               >
                 Vijayawada

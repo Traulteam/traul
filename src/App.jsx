@@ -33,7 +33,7 @@ function App() {
           <Route path="/cancel" element={<Cancellation />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/about-us" element={<About />} />
-          <Route path="/booking" element={<VijayawadaBookingPage />} />
+          <Route path="/vijayawada" element={<VijayawadaBookingPage />} />
           <Route path="/download" element={<AppDownload />} />
           <Route path="/vijayawada/office-shifting" element={<OfficeShiftingVijayawada />} />
           <Route path="/vijayawada/appliance-moving" element={<ApplianceMovingVijayawada />} />
