@@ -553,6 +553,27 @@ const ContactPage = () => {
                 </p>
               </div>
             </div>
+
+        {/* Call card below Business Hours */}
+        <div className="mt-6 bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+              <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6 text-white">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C11.4 21 3 12.6 3 2a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.2 2.2z" />
+              </svg>
+            </div>
+            <div className="flex-1">
+              <p className="text-gray-300 text-sm">Call Us</p>
+              <p className="text-white text-lg font-semibold">+91 9646443444</p>
+            </div>
+            <a
+              href="tel:+919646443444"
+              className="bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded-lg transition-colors"
+            >
+              Call Now
+            </a>
+          </div>
+        </div>
           </div>
         </div>
 
