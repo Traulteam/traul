@@ -19,12 +19,12 @@ function Header() {
     "/about-us",
     "/vijayawada",
     "/download",
-         "/vijayawada/office-shifting",
-     "/vijayawada/appliance-moving",
-     "/vijayawada/furniture-transport",
-           "/vijayawada/house-shifting",
-      "/vijayawada/mini-truck-booking",
-      "/vijayawada/parcel-delivery",
+    "/vijayawada/office-shifting",
+    "/vijayawada/appliance-moving",
+    "/vijayawada/furniture-transport",
+    "/vijayawada/house-shifting",
+    "/vijayawada/mini-truck-booking",
+    "/vijayawada/parcel-delivery",
   ].includes(location.pathname);
 
   const toggleMenu = useCallback(() => {
@@ -38,13 +38,13 @@ function Header() {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (!event.target.closest('.dropdown-container')) {
+      if (!event.target.closest(".dropdown-container")) {
         setIsDropdownOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Handle logo click - scroll to top and navigate to home
@@ -116,7 +116,7 @@ function Header() {
           >
             About Us
           </Link>
-          
+
           {/* Vijayawada Dropdown */}
           <div className="dropdown-container relative">
             <div className="flex items-center gap-1">
@@ -130,14 +130,14 @@ function Header() {
                 onClick={toggleDropdown}
                 className="p-1 hover:bg-gray-100 rounded transition-all duration-200"
               >
-                <ChevronDown 
+                <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
-                    isDropdownOpen ? 'rotate-180' : ''
-                  }`} 
+                    isDropdownOpen ? "rotate-180" : ""
+                  }`}
                 />
               </button>
             </div>
-            
+
             {/* Dropdown Menu */}
             {isDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
@@ -186,6 +186,12 @@ function Header() {
               </div>
             )}
           </div>
+          <Link
+            to="/contact-us"
+            className="hover:font-semibold text-sm lg:text-base text-black"
+          >
+            Contact Us
+          </Link>
         </nav>
 
         {/* Download and Contact Buttons - Pushed to far right */}
@@ -196,12 +202,12 @@ function Header() {
           >
             Download App
           </Link>
-          <Link
-            to="/contact-us"
+          <a
+            href="tel:+919646443444"
             className="border border-black text-black px-4 py-2 rounded-md hover:bg-black hover:text-white text-sm lg:text-base transition-colors duration-200"
           >
-            Contact Us
-          </Link>
+            Call Us
+          </a>
         </div>
 
         {/* Hamburger Icon */}
@@ -250,7 +256,7 @@ function Header() {
           >
             About Us
           </Link>
-          
+
           {/* Mobile Vijayawada Services */}
           <div className="space-y-2">
             <div className="text-base font-medium text-gray-900 py-2 border-b border-gray-100">
@@ -301,7 +307,7 @@ function Header() {
               </Link>
             </div>
           </div>
-          
+
           <div className="flex flex-col gap-4 pt-4">
             <Link
               to="/contact-us"
