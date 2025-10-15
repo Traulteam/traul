@@ -306,16 +306,22 @@ function Header() {
                 Parcel Delivery Services
               </Link>
             </div>
-          </div>
-
-          <div className="flex flex-col gap-4 pt-4">
             <Link
               to="/contact-us"
               onClick={() => setIsMenuOpen(false)}
-              className="border-2 border-gray-300 text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-50 text-base font-medium transition-all duration-200 text-center"
+              className="text-base font-medium text-gray-900 hover:text-orange-600 transition-colors py-2 border-b border-gray-100"
             >
               Contact Us
             </Link>
+          </div>
+
+          <div className="flex flex-col gap-4 pt-4">
+            <a
+              href="tel:+919646443444"
+              className="border-2 border-gray-300 text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-50 text-base font-medium transition-all duration-200 text-center"
+            >
+              Call Us
+            </a>
             <Link
               to="/download"
               onClick={() => setIsMenuOpen(false)}
